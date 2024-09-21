@@ -1,0 +1,73 @@
+.recommendations-container {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  box-shadow: 0 0 20px 10px lightgrey;
+  border-radius: 10px;
+  position: relative;
+  width: 1100px;
+  margin: 0 auto;
+  max-height: 552px;
+}
+
+.recommendations-container .image {
+  width: 512px;
+  height: 512px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.recommendations-container .image img {
+  object-fit: scale-down;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+}
+
+.recommendations-container .recommendations {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.recommendations-container .recommendations select {
+  width: 100%;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &:focus {
+    outline: none;
+    border-color: var(--main-color);
+    box-shadow: 0 0 8px rgba(255, 64, 31, 0.5);
+  }
+
+  option {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    background-color: #fff;
+  }
+}
+
+.recommendations-container
+  .recommendations
+  .recommendation-response::-webkit-scrollbar {
+  width: 5px;
+}
+
+.recommendations-container .recommendations .recommendation-response {
+  overflow: auto;
+  padding: 10px;
+}

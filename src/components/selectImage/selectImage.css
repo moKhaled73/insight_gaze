@@ -1,0 +1,27 @@
+.upload {
+  width: 512px;
+  height: 512px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 2px dashed var(--main-color);
+  border-radius: 10px;
+
+  #image-file {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  p {
+    font-size: 25px;
+    font-style: italic;
+    font-weight: bold;
+    color: #777;
+  }
+}

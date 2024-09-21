@@ -1,0 +1,119 @@
+main {
+  background-color: var(--gray-background);
+  padding: 10px 20px;
+}
+
+/* start tabs */
+main .tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--main-color);
+  margin-left: 0;
+
+  li {
+    border: 2px solid var(--main-color);
+    border-bottom: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background-color: var(--white-background);
+    color: var(--link-color);
+    padding: 5px 15px;
+
+    &:hover,
+    &.active {
+      background-color: var(--main-color);
+      color: #f0f0f0;
+    }
+  }
+}
+
+@media (max-width: 512px) {
+  main {
+    .tabs {
+      gap: 5px;
+      border-bottom: 1px solid var(--main-color);
+
+      li {
+        border: 1px solid var(--main-color);
+        border-bottom: none;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+main .container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: var(--white-background);
+  margin: 30px auto 0;
+  width: fit-content;
+}
+
+main .container .close {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 28px;
+  color: red;
+  z-index: 5;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 50%;
+  border: none;
+}
+
+main .container .images-container {
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  gap: 60px;
+  box-shadow: 0 0 20px 10px lightgrey;
+  border-radius: 10px;
+  position: relative;
+  justify-content: center;
+}
+
+main .container .generate {
+  background-color: var(--main-color);
+  border: none;
+  outline: none;
+  color: #f0f0f0;
+  padding: 7px 18px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 512px;
+  margin: 0 auto;
+
+  .loading {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid;
+    border-color: white transparent;
+    animation: rotate 1s infinite linear;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    rotate: 0;
+  }
+
+  100% {
+    rotate: 1turn;
+  }
+}

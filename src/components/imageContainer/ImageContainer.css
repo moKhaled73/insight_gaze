@@ -1,0 +1,28 @@
+.image-container {
+  background: var(--gray-background);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    span {
+      background-color: var(--main-color);
+      color: white;
+      padding: 3px 8px;
+
+      border-radius: 3px;
+    }
+
+    .icon {
+      background-color: var(--main-color);
+      padding: 5px;
+      color: white;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  }
+}
