@@ -1,0 +1,147 @@
+.home {
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 60px;
+  background-color: var(--background-color);
+  padding-bottom: 120px;
+}
+
+.container {
+  margin: 20px 0;
+  display: flex;
+  align-items: normal;
+  justify-content: space-around;
+}
+
+.container .image {
+  position: relative;
+  width: 512px;
+  height: 320px;
+  overflow: hidden;
+}
+
+.home .container .bottom-image,
+.home .container .top-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.home .container .bottom-image {
+  z-index: 1;
+}
+
+.home .container .top-image {
+  z-index: 2;
+  opacity: 0.5;
+}
+
+.home .container .slider {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  padding: 3px;
+  z-index: 3;
+  border-radius: 50%;
+  cursor: ew-resize;
+}
+
+.home .container .info {
+  width: 80%;
+}
+
+.home .container .info h1 {
+  font-size: 26px;
+  color: var(--main-color);
+  width: 80%;
+}
+
+.home .container .info p {
+  width: 74%;
+  font-size: 20px;
+  margin-top: 45px;
+}
+
+.home .btnhome2 {
+  background: none;
+  border: 3px solid var(--main-color);
+  color: var(--main-color);
+  padding-left: 3px;
+
+  span {
+    margin-left: 7px;
+  }
+}
+
+.home .btnhome2 {
+  margin-top: 2%;
+}
+
+.home .btnhome,
+.btnhome2 {
+  display: inline-block;
+  margin-bottom: 30px;
+  margin-top: 3%;
+  width: 159px;
+  height: 53px;
+  text-align: center;
+  padding: 13px 17px;
+  background-color: var(--main-color);
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  margin-right: 5px;
+}
+
+.btnhome:hover {
+  transform: scale(1.1);
+  box-shadow: 0rem 0rem 1.3rem var(--main-color);
+}
+
+.btnhome2:hover {
+  transform: scale(1.1);
+  box-shadow: 0rem 0rem 1.3rem var(--main-color);
+}
+
+@media (max-width: 992px) {
+  .home .container {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home .container img {
+    width: 100%;
+  }
+
+  .home .container .info h1 {
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .home .container .info p {
+    margin-top: 30px;
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .home .btns {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+}

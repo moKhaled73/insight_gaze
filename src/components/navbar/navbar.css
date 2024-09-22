@@ -1,0 +1,238 @@
+header {
+  /* position: sticky;*/
+  top: 0;
+  left: 0;
+  background: var(--background-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 25px;
+  max-width: 100%;
+  margin-bottom: 2px;
+  z-index: 10;
+  box-shadow: 0px 0 1px white;
+}
+
+.links {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 250px;
+  z-index: 999;
+  background-color: rgb(255, 255, 255, 0.45);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  backdrop-filter: blur(10px);
+  display: none;
+  transition: all 0.3s linear;
+
+  li {
+    width: 100%;
+    margin: 5px 5px;
+    border-radius: 8px;
+    width: 180px;
+    height: 30px;
+    padding: 10px 30px;
+    cursor: pointer;
+
+    a {
+      width: 100%;
+    }
+  }
+
+  .link:hover {
+    background-color: #f0f0f0;
+  }
+
+  .btn1 {
+    bottom: 62px;
+    position: absolute;
+  }
+
+  .btn {
+    bottom: 3px;
+    position: absolute;
+  }
+
+  .btn,
+  .btn1 {
+    width: 76%;
+    margin: 0px 31px;
+  }
+
+  .btn1:hover {
+    background: var(--main-color);
+    color: white;
+  }
+}
+
+.img {
+  width: 80px;
+  display: flex;
+  align-items: center;
+  margin-right: 68px;
+
+  img {
+    width: 100%;
+  }
+
+  span {
+    color: var(--main-color);
+    font-weight: 700;
+    font-size: 20px;
+  }
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  flex: 1;
+}
+
+ul li {
+  list-style: none;
+
+  i {
+    margin-right: 7px;
+    color: var(--color-nav);
+  }
+
+  #conn {
+    transform: rotate(-24deg);
+  }
+
+  a {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-nav);
+  }
+
+  a:hover {
+    color: var(--main-color);
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.btn1 {
+  width: 130px;
+  height: 45px;
+  border: 2px solid var(--main-color);
+  border-radius: 32px;
+  background: var(--main-color);
+  color: white;
+  font-size: 19px;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.btn1:hover {
+  box-shadow: 0rem 0rem 1.3rem var(--main-color);
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1);
+}
+
+.btn {
+  background-color: transparent;
+  color: var(--main-color);
+  border: 2px solid var(--main-color);
+  font-size: 19px;
+  width: 130px;
+  height: 45px;
+  border-radius: 32px;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.btn:hover {
+  box-shadow: 0rem 0rem 1.3rem var(--main-color);
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1);
+}
+
+@media (max-width: 1200px) {
+  .buttons {
+    gap: 4px;
+  }
+
+  ul {
+    gap: 33px;
+    margin-left: 65px;
+    margin-right: 0px;
+
+    li {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 990px) {
+  /*header {
+        padding: 0px;
+        margin: 20px 18px;
+    }*/
+
+  ul {
+    gap: 20px;
+  }
+
+  .buttons {
+    gap: 8px;
+
+    .btn1,
+    .btn {
+      width: 120px;
+      height: 39px;
+    }
+  }
+
+  .img {
+    width: 63px;
+
+    span {
+      font-size: 12px;
+    }
+  }
+}
+
+.menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* header {
+        padding: 0px;
+        margin: 20px 18px;
+    }*/
+
+  .menu {
+    display: block;
+  }
+
+  .buttons,
+  .active {
+    display: none;
+  }
+}
+
+@media (max-width: 350px) {
+  .img {
+    width: 60px;
+
+    span {
+      font-size: 15px;
+    }
+  }
+}
