@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import ReactMarkdown from "react-markdown";
 import { Buffer } from "buffer"; // Buffer polyfill for the browser
 import { useImageFile } from "../../context/ImageFileProvider";
 import "./Recommendations.css";
+import GenerateButton from "../button/GenerateButton";
+import OriginalImage from "../OriginalImage";
+import TryAgainButton from "../button/TryAgainButton";
 
 const prompts = {
   human_interface_guidelines:
@@ -18,11 +21,12 @@ const prompts = {
     "Assess the design and suggest enhancements based on the specific platform's design guidelines. Whether it's iOS, Android, Windows, or web, ensure the recommendations adhere to the unique principles of the target platform. Emphasize creating an intuitive user experience that aligns with the native look and feel of the platform",
 };
 
-const genAI = new GoogleGenerativeAI("AIzaSyAMUlEpf_SMOe-_-mfOTCXseUc62lIS364");
+const genAI = new GoogleGenerativeAI("AIzaSyCsnFKo_eNQC_FXS6ImzO_2pjXPlF5XlhY");
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 const Recommendations = () => {
   const { imageFile } = useImageFile();
+  const imageContainerRef = useRef(null);
   const [prompt, setPrompt] = useState("human_interface_guidelines");
   const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
@@ -75,14 +79,17 @@ const Recommendations = () => {
   return (
     <>
       <div className="recommendations-container">
-        <div className="image">
-          <img src={URL.createObjectURL(imageFile)} alt="image" />
+        <div className="image" ref={imageContainerRef}>
+          <OriginalImage imageContainerRef={imageContainerRef} />
         </div>
         <div className="recommendations">
           <select
             name="guidelines"
             id="guidelines"
-            onChange={(e) => setPrompt(e.target.value)}
+            onChange={(e) => {
+              setPrompt(e.target.value);
+              setResponse("");
+            }}
           >
             <option value="human_interface_guidelines">
               Human Interface Guidelines (HIG)
@@ -105,9 +112,15 @@ const Recommendations = () => {
           </div>
         </div>
       </div>
-      <button onClick={generateContent} className="generate">
-        {loading ? <span className="loading"></span> : "Generate Content"}
-      </button>
+      {response ? (
+        <TryAgainButton />
+      ) : (
+        <GenerateButton
+          text={"Generate Recommendation"}
+          loading={loading}
+          onClickHandler={generateContent}
+        />
+      )}
     </>
   );
 };

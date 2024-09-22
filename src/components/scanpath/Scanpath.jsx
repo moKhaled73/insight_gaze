@@ -1,9 +1,11 @@
 import { useImageFile } from "../../context/ImageFileProvider";
 import ImageContainer from "../imageContainer/ImageContainer";
 import { useScanpath } from "../../api/scanpath";
+import GenerateButton from "../button/GenerateButton";
+import TryAgainButton from "../button/TryAgainButton";
 
 const Scanpath = () => {
-  const { imageFile, setScanpath } = useImageFile();
+  const { imageFile, setScanpath, scanpath } = useImageFile();
 
   const onSuccess = (data) => {
     setScanpath(URL.createObjectURL(data.data));
@@ -23,9 +25,15 @@ const Scanpath = () => {
       <div className="images-container">
         <ImageContainer imageName={"scanpath"} helpName={"scanpath"} />
       </div>
-      <button onClick={generateScanpathHandler} className="generate">
-        {isLoading ? <span className="loading"></span> : "Generate Scanpath"}
-      </button>
+      {scanpath ? (
+        <TryAgainButton />
+      ) : (
+        <GenerateButton
+          text={"Generate Scanpath"}
+          loading={isLoading}
+          onClickHandler={generateScanpathHandler}
+        />
+      )}
     </>
   );
 };

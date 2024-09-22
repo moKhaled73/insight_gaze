@@ -1,12 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useRef } from "react";
-import { useImageFile } from "../../context/ImageFileProvider";
-import "./scanpathDisplay.css";
+import { useImageFile } from "../context/ImageFileProvider";
 
-const ScanpathDisplay = () => {
-  const { imageFile, scanpath } = useImageFile();
+const OriginalImage = ({ imageContainerRef }) => {
+  const { imageFile } = useImageFile();
   const originalRef = useRef(null);
-  const imageContainerRef = useRef(null);
 
   useEffect(() => {
     const img = originalRef.current;
@@ -29,14 +27,17 @@ const ScanpathDisplay = () => {
         }
       };
     }
-  }, [imageFile]);
-
+  }, [imageFile, imageContainerRef]);
   return (
-    <div ref={imageContainerRef} className="scanpath-display">
-      <img ref={originalRef} alt="original" className="original" />
-      {scanpath && <img src={scanpath} alt="result" className="result" />}
-    </div>
+    <>
+      <img
+        ref={originalRef}
+        alt="original"
+        className="original"
+        draggable="false"
+      />
+    </>
   );
 };
 
-export default ScanpathDisplay;
+export default OriginalImage;

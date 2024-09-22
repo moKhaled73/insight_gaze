@@ -1,13 +1,12 @@
 /* eslint-disable react/prop-types */
 
 import "./imageContainer.css";
-import HeatmapDisplay from "./HeatmapDisplay";
-import ScanpathDisplay from "./ScanpathDisplay";
 import { FaDownload } from "react-icons/fa6";
 import { IoMdHelp } from "react-icons/io";
 import HelpDialog from "../helpDialog/HelpDialog";
 import { useState } from "react";
 import { useImageFile } from "../../context/ImageFileProvider";
+import ResultDisplay from "./ResultDisplay";
 
 const HelpDialogContent = {
   "heatmap-3s": {
@@ -98,11 +97,7 @@ const ImageContainer = ({ imageName, helpName }) => {
           size={28}
         />
       </div>
-      {/heatmap/.test(helpName) ? (
-        <HeatmapDisplay helpName={helpName} />
-      ) : (
-        <ScanpathDisplay />
-      )}
+      <ResultDisplay helpName={helpName} />
       <HelpDialog
         title={title}
         content={content}

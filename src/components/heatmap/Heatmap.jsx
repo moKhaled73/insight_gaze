@@ -1,9 +1,11 @@
 import { useHeatmap3s, useHeatmap7s } from "../../api/heatmap";
 import { useImageFile } from "../../context/ImageFileProvider";
+import TryAgainButton from "../button/TryAgainButton";
+import GenerateButton from "../button/GenerateButton";
 import ImageContainer from "../imageContainer/ImageContainer";
 import "./heatmap.css";
 const Heatmap = () => {
-  const { imageFile, setHeatmap3s, setHeatmap7s } = useImageFile();
+  const { imageFile, setHeatmap3s, setHeatmap7s, heatmap3s } = useImageFile();
 
   const onSuccessHeatmap3s = (data) => {
     setHeatmap3s(URL.createObjectURL(data.data));
@@ -33,19 +35,15 @@ const Heatmap = () => {
         <div className="divider"></div>
         <ImageContainer imageName={"heatmap 7s"} helpName={"heatmap-7s"} />
       </div>
-      <button
-        type="button"
-        onClick={() => {
-          generateHeatmap();
-        }}
-        className="generate"
-      >
-        {isLoadingHeatmap3s || isLoadingHeatmap7s ? (
-          <span className="loading"></span>
-        ) : (
-          "Generate heatmap"
-        )}
-      </button>
+      {heatmap3s ? (
+        <TryAgainButton />
+      ) : (
+        <GenerateButton
+          text={"Generate Heatmap"}
+          loading={isLoadingHeatmap3s || isLoadingHeatmap7s}
+          onClickHandler={generateHeatmap}
+        />
+      )}
     </>
   );
 };
