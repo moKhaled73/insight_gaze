@@ -81,7 +81,7 @@ const ImageContainer = ({ imageName, helpName }) => {
     <div className={`image-container`}>
       <div className="info">
         <span className="image-name">{imageName}</span>
-        <IoMdHelp onClick={handleDisplayHelp} className="icon" size={28} />
+        <IoMdHelp onClick={handleDisplayHelp} className="icon" size={19} />
         <FaDownload
           style={{
             display: `${
@@ -94,7 +94,7 @@ const ImageContainer = ({ imageName, helpName }) => {
           }}
           onClick={handleDownload}
           className="icon"
-          size={28}
+          size={19}
         />
       </div>
       <ResultDisplay helpName={helpName} />
