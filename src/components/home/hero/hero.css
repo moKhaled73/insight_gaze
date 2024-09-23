@@ -69,30 +69,15 @@
   margin-top: 45px;
 }
 
-.home .btnhome2 {
-  background: none;
-  border: 3px solid var(--main-color);
-  color: var(--main-color);
-  padding-left: 3px;
-
-  span {
-    margin-left: 7px;
-  }
+.home .btns {
+  display: flex;
+  gap: 15px;
 }
 
-.home .btnhome2 {
-  margin-top: 2%;
-}
-
-.home .btnhome,
-.btnhome2 {
-  display: inline-block;
-  margin-bottom: 30px;
-  margin-top: 3%;
-  width: 159px;
-  height: 53px;
+.home .btns .btnhome,
+.home .btns .btnhome2 {
   text-align: center;
-  padding: 13px 17px;
+  padding: 15px 30px;
   background-color: var(--main-color);
   border-radius: 6px;
   color: white;
@@ -101,7 +86,15 @@
   border: none;
   cursor: pointer;
   transition: all 0.3s linear;
-  margin-right: 5px;
+}
+
+.home .btns .btnhome2 {
+  background: none;
+  border: 3px solid var(--main-color);
+  color: var(--main-color);
+  span {
+    margin-left: 7px;
+  }
 }
 
 .btnhome:hover {

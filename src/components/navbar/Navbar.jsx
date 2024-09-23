@@ -1,31 +1,75 @@
 import "./navbar.css";
 import logo from "../../assets/logo-removebg-preview.png";
+import { useRef } from "react";
+import { useEffect } from "react";
 
 const Navbar = () => {
+  const themeIcon = useRef(null);
+  const links = useRef();
+
+  function changeIcon() {
+    themeIcon.current.classList.remove("move");
+    setTimeout(() => {
+      themeIcon.current.classList.toggle("fa-moon");
+      themeIcon.current.classList.toggle("fa-sun");
+    }, 100);
+    themeIcon.current.classList.add("move");
+  }
+  useEffect(() => {
+    if (localStorage.getItem("theme")) {
+      if (localStorage.getItem("theme") === "light") {
+        document.body.dataset.theme = "light";
+        themeIcon.current.classList.add("fa-moon");
+        themeIcon.current.classList.remove("fa-sun");
+        themeIcon.current.classList.add("move");
+      } else if (localStorage.getItem("theme") === "dark") {
+        document.body.dataset.theme = "dark";
+        themeIcon.current.classList.remove("fa-moon");
+        themeIcon.current.classList.add("fa-sun");
+        themeIcon.current.classList.add("move");
+      }
+    }
+  }, []);
+
+  const handleThemeChange = () => {
+    if (
+      document.body.dataset.theme === "light" ||
+      document.body.dataset.theme === undefined
+    ) {
+      console.log("light inside");
+      document.body.dataset.theme = "dark";
+      localStorage.setItem("theme", "dark");
+    } else if (document.body.dataset.theme === "dark") {
+      document.body.dataset.theme = "light";
+      localStorage.setItem("theme", "light");
+    }
+    changeIcon();
+  };
+
   return (
     <header>
       <div className="img">
         <img src={logo} alt="InsightGaze" />
         <span>InsightGaze</span>
       </div>
-      <ul>
+      <ul className="lg-links">
         <li className="active">
           <i className="fa-solid fa-house" style={{ color: " #c77529" }}></i>
-          <a href="#home">Home</a>
+          <a href="/#home">Home</a>
         </li>
         <li className="active">
           <i
             className="fa-solid fa-users-gear"
             style={{ color: " #c77529" }}
           ></i>
-          <a href="#services">Services</a>
+          <a href="/#services">Services</a>
         </li>
         <li className="active">
           <i
             className="fa-regular fa-address-card"
             style={{ color: " #c77529" }}
           ></i>
-          <a href="#about">About</a>
+          <a href="/#about">About</a>
         </li>
         <li className="active">
           <i
@@ -33,9 +77,12 @@ const Navbar = () => {
             className="fa-solid fa-phone-volume"
             style={{ color: " #c77529" }}
           ></i>
-          <a href="#contact">Contact</a>
+          <a href="/#contact">Contact</a>
         </li>
-        <li className="menu">
+        <li
+          className="menu"
+          onClick={() => (links.current.style.display = "block")}
+        >
           <a href="#">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -48,13 +95,13 @@ const Navbar = () => {
             </svg>
           </a>
         </li>
-        <div className="theme-container">
-          <i className="fa-solid fa-sun theme"></i>
+        <div onClick={handleThemeChange} className="theme-container">
+          <i ref={themeIcon} className="fa-solid fa-sun theme"></i>
         </div>
       </ul>
 
-      <ul className="links">
-        <li>
+      <ul ref={links} className="links">
+        <li onClick={() => (links.current.style.display = "none")}>
           <a href="#">
             <svg
               xmlns="http://www.w3.org/2000/svg"
