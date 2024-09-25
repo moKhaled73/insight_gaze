@@ -1,4 +1,4 @@
-import { useImageFile } from "../../context/ImageFileProvider";
+import { useImageFile } from "../../../context/ImageFileProvider";
 import "./generateButton.css";
 
 const TryAgainButton = () => {

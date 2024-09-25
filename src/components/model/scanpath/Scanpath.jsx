@@ -1,6 +1,6 @@
-import { useImageFile } from "../../context/ImageFileProvider";
+import { useImageFile } from "../../../context/ImageFileProvider";
 import ImageContainer from "../imageContainer/ImageContainer";
-import { useScanpath } from "../../api/scanpath";
+import { useScanpath } from "../../../api/scanpath";
 import GenerateButton from "../button/GenerateButton";
 import TryAgainButton from "../button/TryAgainButton";
 

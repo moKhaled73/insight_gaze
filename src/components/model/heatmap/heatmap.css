@@ -8,3 +8,10 @@
   background: var(--main-color);
   display: block;
 }
+
+@media (max-width: 1180px) {
+  .images-container .divider {
+    height: 1.5px;
+    width: 80%;
+  }
+}

@@ -1,5 +1,5 @@
-import { useHeatmap3s, useHeatmap7s } from "../../api/heatmap";
-import { useImageFile } from "../../context/ImageFileProvider";
+import { useHeatmap3s, useHeatmap7s } from "../../../api/heatmap";
+import { useImageFile } from "../../../context/ImageFileProvider";
 import TryAgainButton from "../button/TryAgainButton";
 import GenerateButton from "../button/GenerateButton";
 import ImageContainer from "../imageContainer/ImageContainer";

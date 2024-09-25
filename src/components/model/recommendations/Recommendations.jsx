@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import ReactMarkdown from "react-markdown";
 import { Buffer } from "buffer"; // Buffer polyfill for the browser
-import { useImageFile } from "../../context/ImageFileProvider";
+import { useImageFile } from "../../../context/ImageFileProvider";
 import "./Recommendations.css";
 import GenerateButton from "../button/GenerateButton";
 import OriginalImage from "../OriginalImage";

@@ -51,7 +51,7 @@ main .container {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
   background-color: var(--white-background);
   margin: 30px auto 0;
   width: fit-content;
@@ -79,4 +79,10 @@ main .container .images-container {
   border-radius: 10px;
   position: relative;
   justify-content: center;
+}
+
+@media (max-width: 1180px) {
+  main .container .images-container {
+    flex-direction: column;
+  }
 }

@@ -5,7 +5,7 @@ import { FaDownload } from "react-icons/fa6";
 import { IoMdHelp } from "react-icons/io";
 import HelpDialog from "../helpDialog/HelpDialog";
 import { useState } from "react";
-import { useImageFile } from "../../context/ImageFileProvider";
+import { useImageFile } from "../../../context/ImageFileProvider";
 import ResultDisplay from "./ResultDisplay";
 
 const HelpDialogContent = {

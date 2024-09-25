@@ -3,15 +3,15 @@ import { Helmet } from "react-helmet";
 import "./model.css";
 
 // components
-import SelectImage from "../../components/selectImage/SelectImage";
-import Heatmap from "../../components/heatmap/Heatmap";
-import Scanpath from "../../components/scanpath/Scanpath";
+import SelectImage from "../../components/model/selectImage/SelectImage";
+import Heatmap from "../../components/model/heatmap/Heatmap";
+import Scanpath from "../../components/model/scanpath/Scanpath";
+import Recommendations from "../../components/model/recommendations/Recommendations";
 
 // context
 import { useImageFile } from "../../context/ImageFileProvider";
 
 import { IoMdCloseCircle } from "react-icons/io";
-import Recommendations from "../../components/recommendations/Recommendations";
 
 const Model = () => {
   const [activeTab, setActiveTab] = useState("heatmap");

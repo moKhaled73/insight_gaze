@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useRef } from "react";
-import { useImageFile } from "../context/ImageFileProvider";
+import { useImageFile } from "../../context/ImageFileProvider";
 
 const OriginalImage = ({ imageContainerRef }) => {
   const { imageFile } = useImageFile();
