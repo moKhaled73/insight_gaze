@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  border: 2px dashed var(--main-color);
+  border: 2px dashed var(--purple);
   border-radius: 10px;
 
   #image-file {

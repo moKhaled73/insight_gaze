@@ -3,6 +3,9 @@ import logo from "../../assets/logo-removebg-preview.png";
 import { useRef } from "react";
 import { useEffect } from "react";
 
+import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
   const themeIcon = useRef(null);
   const links = useRef();
@@ -48,36 +51,26 @@ const Navbar = () => {
 
   return (
     <header>
-      <div className="img">
+      <Link to="/" className="img">
         <img src={logo} alt="InsightGaze" />
         <span>InsightGaze</span>
-      </div>
+      </Link>
       <ul className="lg-links">
         <li className="active">
-          <i className="fa-solid fa-house" style={{ color: " #c77529" }}></i>
-          <a href="/#home">Home</a>
+          <i className="fa-solid fa-house"></i>
+          <HashLink to="/#home">Home</HashLink>
         </li>
         <li className="active">
-          <i
-            className="fa-solid fa-users-gear"
-            style={{ color: " #c77529" }}
-          ></i>
-          <a href="/#services">Services</a>
+          <i className="fa-solid fa-users-gear"></i>
+          <HashLink to="/#services">Services</HashLink>
         </li>
         <li className="active">
-          <i
-            className="fa-regular fa-address-card"
-            style={{ color: " #c77529" }}
-          ></i>
-          <a href="/#about">About</a>
+          <i className="fa-regular fa-address-card"></i>
+          <HashLink to="/#about">About</HashLink>
         </li>
         <li className="active">
-          <i
-            id="conn"
-            className="fa-solid fa-phone-volume"
-            style={{ color: " #c77529" }}
-          ></i>
-          <a href="/#contact">Contact</a>
+          <i id="conn" className="fa-solid fa-phone-volume"></i>
+          <HashLink to="/#contact">Contact</HashLink>
         </li>
         <li
           className="menu"
@@ -115,29 +108,19 @@ const Navbar = () => {
           </a>
         </li>
         <li className="link">
-          <i className="fa-solid fa-house" style={{ color: " #c77529" }}></i>
+          <i className="fa-solid fa-house"></i>
           <a href="#home">Home</a>
         </li>
         <li className="link">
-          <i
-            className="fa-solid fa-users-gear"
-            style={{ color: " #c77529" }}
-          ></i>
+          <i className="fa-solid fa-users-gear"></i>
           <a href="#services">Services</a>
         </li>
         <li className="link">
-          <i
-            className="fa-regular fa-address-card"
-            style={{ color: " #c77529" }}
-          ></i>
+          <i className="fa-regular fa-address-card"></i>
           <a href="#about">about</a>
         </li>
         <li className="link">
-          <i
-            id="conn"
-            className="fa-solid fa-phone-volume"
-            style={{ color: " #c77529" }}
-          ></i>
+          <i id="conn" className="fa-solid fa-phone-volume"></i>
           <a href="#contact">contact</a>
         </li>
         <button className="btn1">log in</button>

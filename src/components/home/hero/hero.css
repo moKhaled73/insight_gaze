@@ -1,9 +1,9 @@
 .home {
   padding-left: 60px;
   padding-right: 60px;
-  padding-top: 60px;
-  background-color: var(--background-color);
-  padding-bottom: 120px;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  background: url(../images/Desktop\ -\ 3.png) no-repeat center/cover;
 }
 
 .container {
@@ -18,6 +18,7 @@
   width: 512px;
   height: 320px;
   overflow: hidden;
+  background: url(../images/Ellipses.png);
 }
 
 .home .container .bottom-image,
@@ -59,7 +60,7 @@
 
 .home .container .info h1 {
   font-size: 26px;
-  color: var(--main-color);
+  color: var(--DarkPurple);
   width: 80%;
 }
 
@@ -67,6 +68,7 @@
   width: 74%;
   font-size: 20px;
   margin-top: 45px;
+  font-family: auto;
 }
 
 .home .btns {
@@ -78,7 +80,7 @@
 .home .btns .btnhome2 {
   text-align: center;
   padding: 15px 30px;
-  background-color: var(--main-color);
+  background: var(--gradient);
   border-radius: 6px;
   color: white;
   font-weight: 600;
@@ -90,8 +92,8 @@
 
 .home .btns .btnhome2 {
   background: none;
-  border: 3px solid var(--main-color);
-  color: var(--main-color);
+  border: 3px solid var(--purple);
+  color: var(--purple);
   span {
     margin-left: 7px;
   }
@@ -99,12 +101,12 @@
 
 .btnhome:hover {
   transform: scale(1.1);
-  box-shadow: 0rem 0rem 1.3rem var(--main-color);
+  box-shadow: 0rem 0rem 1.3rem var(--purple);
 }
 
 .btnhome2:hover {
   transform: scale(1.1);
-  box-shadow: 0rem 0rem 1.3rem var(--main-color);
+  box-shadow: 0rem 0rem 1.3rem var(--purple);
 }
 
 @media (max-width: 992px) {

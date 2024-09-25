@@ -21,85 +21,49 @@ const Contact = () => {
                     insights.
                   </p>
                   <div className="icons">
-                    <i
-                      className="fa-brands fa-facebook"
-                      style={{ color: "#e0901f" }}
-                    ></i>
+                    <i className="fa-brands fa-facebook"></i>
 
-                    <i
-                      className="fa-brands fa-twitter"
-                      style={{ color: "#e0901f" }}
-                    ></i>
-                    <i
-                      className="fa-brands fa-instagram"
-                      style={{ color: "#e0901f" }}
-                    ></i>
-                    <i
-                      className="fa-brands fa-linkedin"
-                      style={{ color: "#e0901f" }}
-                    ></i>
+                    <i className="fa-brands fa-twitter"></i>
+                    <i className="fa-brands fa-instagram"></i>
+                    <i className="fa-brands fa-linkedin"></i>
                   </div>
                 </div>
               </div>
               <div className="service">
                 <h3>Our Services</h3>
                 <div className="head">
-                  <i
-                    className="fa-solid fa-circle-check"
-                    style={{ color: "#e0901f" }}
-                  ></i>
+                  <i className="fa-solid fa-circle-check"></i>
                   <span>Eye-tracking</span>
                 </div>
                 <div className="head">
-                  <i
-                    className="fa-solid fa-circle-check"
-                    style={{ color: "#e0901f" }}
-                  ></i>
+                  <i className="fa-solid fa-circle-check"></i>
                   <span>Heatmaps</span>
                 </div>
                 <div className="head">
-                  <i
-                    className="fa-solid fa-circle-check"
-                    style={{ color: "#e0901f" }}
-                  ></i>
+                  <i className="fa-solid fa-circle-check"></i>
                   <span>Reports</span>
                 </div>
                 <div className="head">
-                  <i
-                    className="fa-solid fa-circle-check"
-                    style={{ color: "#e0901f" }}
-                  ></i>
+                  <i className="fa-solid fa-circle-check"></i>
                   <span>Tool Integration</span>
                 </div>
               </div>
               <div className="service">
                 <h3>Our Support</h3>
                 <div className="head">
-                  <i
-                    className="fa-solid fa-sun"
-                    style={{ color: "#e0901f" }}
-                  ></i>
+                  <i className="fa-solid fa-sun"></i>
                   <span>Services</span>
                 </div>
                 <div className="head">
-                  <i
-                    className="fa-solid fa-sun"
-                    style={{ color: "#e0901f" }}
-                  ></i>
+                  <i className="fa-solid fa-sun"></i>
                   <span>FAQs</span>
                 </div>
                 <div className="head">
-                  <i
-                    className="fa-solid fa-sun"
-                    style={{ color: "#e0901f" }}
-                  ></i>
+                  <i className="fa-solid fa-sun"></i>
                   <span>Contact</span>
                 </div>
                 <div className="head">
-                  <i
-                    className="fa-solid fa-sun"
-                    style={{ color: "#e0901f" }}
-                  ></i>
+                  <i className="fa-solid fa-sun"></i>
                   <span>Terms</span>
                 </div>
               </div>
@@ -107,10 +71,7 @@ const Contact = () => {
                 <h3>Contact Info</h3>
                 <div className="email">
                   <div className="head">
-                    <i
-                      className="fa-solid fa-envelope"
-                      style={{ color: "#e0901f" }}
-                    ></i>
+                    <i className="fa-solid fa-envelope"></i>
                     <p>Email Address</p>
                   </div>
                   <span className="small">Info@websiteinfo.com</span>
@@ -118,10 +79,7 @@ const Contact = () => {
 
                 <div className="address">
                   <div className="head">
-                    <i
-                      className="fa-solid fa-location-dot"
-                      style={{ color: "#e0901f" }}
-                    ></i>
+                    <i className="fa-solid fa-location-dot"></i>
                     <p>Address</p>
                   </div>
                   <span className="small">99 Rioville St.Big City</span>
@@ -133,7 +91,7 @@ const Contact = () => {
       </footer>
       <section className="footer">
         <p>
-          &copy; copyright @ 2024 || <span>Codex Team</span>
+          &copy; Copyright @ 2024 || <span>Codex Team</span>
           <i className="fa-solid fa-heart" style={{ color: "black" }}></i>
         </p>
       </section>

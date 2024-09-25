@@ -8,11 +8,11 @@ main .tabs {
   display: flex;
   gap: 10px;
   margin-bottom: 10px;
-  border-bottom: 2px solid var(--main-color);
+  border-bottom: 2px solid var(--purple);
   margin-left: 0;
 
   li {
-    border: 2px solid var(--main-color);
+    border: 2px solid var(--purple);
     border-bottom: none;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -26,7 +26,7 @@ main .tabs {
 
     &:hover,
     &.active {
-      background-color: var(--main-color);
+      background-color: var(--purple);
       color: #f0f0f0;
     }
   }
@@ -36,10 +36,10 @@ main .tabs {
   main {
     .tabs {
       gap: 5px;
-      border-bottom: 1px solid var(--main-color);
+      border-bottom: 1px solid var(--purple);
 
       li {
-        border: 1px solid var(--main-color);
+        border: 1px solid var(--purple);
         border-bottom: none;
         font-size: 12px;
       }

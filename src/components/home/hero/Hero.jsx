@@ -11,9 +11,8 @@ const Hero = () => {
       <div className="container">
         <div className="info">
           <h1 className="head">
-            Gain Insights with Heatmap Analytics on Photos. <br />
-            Unlock the Power of Visual Attention with <br />
-            Our AI-Driven Heatmaps
+            Discover the power of visual attention with AI-driven heatmaps for
+            photo analysis!
           </h1>
           <p>
             Understand where viewers focus their attention on your images
@@ -44,10 +43,7 @@ const Hero = () => {
           Try it for free
         </button>
         <a className="btnhome2" href="#video">
-          <i
-            className="fa-regular fa-circle-play"
-            style={{ color: "#c77529" }}
-          ></i>
+          <i className="fa-regular fa-circle-play"></i>
           <span>View Demo</span>
         </a>
       </div>

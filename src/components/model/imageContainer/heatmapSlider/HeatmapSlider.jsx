@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useRef } from "react";
 import { PiArrowsOutLineHorizontalBold } from "react-icons/pi";
+import "./heatmapSlider.css";
 
 const HeatmapSlider = ({ imageContainerRef, resultRef }) => {
   const selectedSlider = useRef(null);

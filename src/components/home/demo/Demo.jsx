@@ -1,5 +1,6 @@
 import "./demo.css";
 import demo from "../../../assets/Demo.mp4";
+import demoImage from "../../../assets/photo_2024-09-15_02-58-47.jpg";
 
 const Demo = () => {
   return (
@@ -13,7 +14,7 @@ const Demo = () => {
             the most attention, helping you optimize your content for maximum
             impact.
           </p>
-          <video controls poster="../images/photo_2024-09-15_02-58-47.jpg">
+          <video controls poster={demoImage}>
             <source src={demo} type="video/mp4" />
           </video>
         </div>

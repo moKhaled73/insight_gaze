@@ -6,7 +6,7 @@
 
   .video {
     h1 {
-      color: var(--secondary-color);
+      color: var(--words);
       font-size: 48px;
     }
 

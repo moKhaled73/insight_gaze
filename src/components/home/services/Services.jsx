@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./services.css";
 
 const Services = () => {
@@ -16,10 +17,10 @@ const Services = () => {
             designer the most important parts of the image that attract
             users&apos; attention.
           </p>
-          <a href="../model_page/heatmap.html?tab=heatmap">
+          <Link to="/model?tab=heatmap">
             <span>Let&apos;s Try</span>
             <i className="fa-solid fa-chevron-right"></i>
-          </a>
+          </Link>
         </div>
         <div className="srv">
           <i className="fa-solid fa-eye" style={{ color: "#8018e7" }}></i>
@@ -30,10 +31,10 @@ const Services = () => {
             like landing page or banner designs that contain headers or mostly
             like that.
           </p>
-          <a href="../model_page/heatmap.html?tab=heatmap">
+          <Link to="/model?tab=heatmap">
             <span>Let&apos;s Try</span>
             <i className="fa-solid fa-chevron-right"></i>
-          </a>
+          </Link>
         </div>
         <div className="srv">
           <i className="fa-solid fa-splotch" style={{ color: "#16a10c" }}></i>
@@ -56,10 +57,31 @@ const Services = () => {
             the transitions that the eye will make. Therefore, it shows the
             interface designer how the user will receive the design.
           </p>
-          <a href="../model_page/heatmap.html?tab=scanpath">
+          <Link to="/model?tab=scanpath">
             <span>Let&apos;s Try</span>
             <i className="fa-solid fa-chevron-right"></i>
-          </a>
+          </Link>
+        </div>
+        <div className="srv">
+          <i
+            className="fa-regular fa-file-code"
+            style={{ color: "#0448be" }}
+          ></i>
+          <h2>Recommendations</h2>
+          <p>
+            Recommendation tool aim to provide suggestions on how to improve a
+            given design based on established design principles, user behavior
+            patterns, or machine learning insights.
+          </p>
+          <div className="btns">
+            <Link to="/model?tab=recommendations">
+              <span>Let&apos;s Try</span>
+              <i className="fa-solid fa-chevron-right"></i>
+            </Link>
+            <Link to="/recommendations">
+              <span className="learn">Learn More</span>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 #scroll {
-  background-color: var(--main-color);
+  background: var(--gradient);
   color: white;
   border-radius: 50%;
   padding: 10px;

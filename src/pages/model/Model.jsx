@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import "./model.css";
 
@@ -12,11 +12,21 @@ import Recommendations from "../../components/model/recommendations/Recommendati
 import { useImageFile } from "../../context/ImageFileProvider";
 
 import { IoMdCloseCircle } from "react-icons/io";
+import { useSearchParams } from "react-router-dom";
 
 const Model = () => {
   const [activeTab, setActiveTab] = useState("heatmap");
   const { imageFile, setImageFile, setHeatmap3s, setHeatmap7s, setScanpath } =
     useImageFile();
+
+  const [searchParams] = useSearchParams();
+  const tab = searchParams.get("tab");
+
+  useEffect(() => {
+    if (tab) {
+      setActiveTab(tab);
+    }
+  }, [tab]);
 
   return (
     <>
