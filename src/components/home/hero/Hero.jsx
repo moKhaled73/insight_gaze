@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const Hero = () => {
   const navigate = useNavigate();
   return (
-    <section className="home" id="home">
+    <header className="home" id="home">
       <div className="container">
         <div className="info">
           <h1 className="head">
@@ -38,7 +38,7 @@ const Hero = () => {
           <img className="slider" src={move} draggable="false" />
         </div>
       </div>
-      <div className="btns">
+      <div className="buttons">
         <button className="btnhome" onClick={() => navigate("/model")}>
           Try it for free
         </button>
@@ -47,7 +47,7 @@ const Hero = () => {
           <span>View Demo</span>
         </a>
       </div>
-    </section>
+    </header>
   );
 };
 

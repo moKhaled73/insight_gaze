@@ -50,7 +50,7 @@ const Navbar = () => {
   };
 
   return (
-    <header>
+    <nav>
       <Link to="/" className="img">
         <img src={logo} alt="InsightGaze" />
         <span>InsightGaze</span>
@@ -127,10 +127,10 @@ const Navbar = () => {
         <button className="btn">sign up</button>
       </ul>
       <div className="buttons">
-        <button className="btn1">log in</button>
-        <button className="btn">sign up</button>
+        <button className="login">log in</button>
+        <button className="signup">sign up</button>
       </div>
-    </header>
+    </nav>
   );
 };
 
