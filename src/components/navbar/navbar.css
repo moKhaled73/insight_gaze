@@ -1,26 +1,22 @@
 nav {
-  /* position: sticky;*/
-  top: 0;
-  left: 0;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 25px;
-  max-width: 100%;
-  margin-bottom: 2px;
-  z-index: 10;
+  padding: 5px 0;
   box-shadow: 0px -0.5rem 1rem rgb(123, 120, 120);
 }
 
-nav .img {
-  width: 80px;
+nav .container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
   display: flex;
   align-items: center;
-  margin-right: 68px;
 
   img {
-    width: 100%;
+    width: 80px;
   }
 
   span {
@@ -30,82 +26,22 @@ nav .img {
   }
 }
 
-nav .lg-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 70px;
-  flex: 1;
-}
-
-nav .lg-links li {
-  list-style: none;
-
-  i {
-    margin-right: 7px;
-    color: var(--purple);
-  }
-
-  #conn {
-    transform: rotate(-24deg);
-  }
-
-  a {
-    text-decoration: none;
-    text-transform: capitalize;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--color-nav);
-  }
-
-  a:hover {
-    color: var(--pink);
-  }
-}
-
-nav .lg-links .theme-container {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 0px;
-  padding-left: 10px;
-  transition: all 0.3s linear;
-  border: 2px solid rgba(62, 57, 57, 0.571);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 20px;
+nav .menu {
   cursor: pointer;
-  box-shadow: inset 0px 0px 4px gray;
-}
-
-nav .lg-links .theme-container .theme {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 2px;
-  transition: all 0.3s;
-}
-
-nav .lg-links .theme-container .fa-sun.move {
-  transform: translate(20px, 0px) rotate(360deg);
-}
-
-nav .lg-links .theme-container .fa-moon.move {
-  transform: translate(0px, 0px) rotate(-360deg);
+  display: none;
+  font-size: 25px;
 }
 
 nav .buttons {
   display: flex;
-  justify-content: space-between;
   gap: 20px;
+  align-items: center;
 }
 
-nav .buttons button {
+nav .buttons a {
   border: 2px solid var(--gradient);
   border-radius: 32px;
-  padding: 10px 35px;
+  padding: 8px 20px;
   background: var(--gradient);
   color: white;
   font-size: 19px;
@@ -119,65 +55,21 @@ nav .buttons .signup {
   border: 2px solid var(--purple);
 }
 
-nav .buttons button:hover {
+nav .buttons a:hover {
   box-shadow: 0rem 0rem 1.7rem var(--purple);
   transition: all 0.3s ease-in-out;
   transform: scale(1.1);
 }
 
-@media (max-width: 1200px) {
-  nav .buttons {
-    gap: 4px;
-  }
-
-  nav .lg-links {
-    gap: 33px;
-    margin-left: 65px;
-    margin-right: 0px;
-
-    li {
-      text-align: center;
-    }
-  }
-}
-
-@media (max-width: 990px) {
-  nav .lg-links {
-    gap: 20px;
-  }
-
-  nav .buttons {
-    gap: 8px;
-  }
-
-  nav .img {
-    width: 63px;
-
-    span {
-      font-size: 12px;
-    }
-  }
-}
-
-@media (max-width: 350px) {
-  nav .img {
-    width: 60px;
-    span {
-      font-size: 15px;
-    }
-  }
-}
-
-nav .links {
+nav .sm-links {
   position: fixed;
   top: 0;
   right: 0;
   height: 100%;
   width: 250px;
   z-index: 999;
-  background-color: rgb(255, 255, 255, 0.45);
+  background-color: var(--links-background);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
-  display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
@@ -185,57 +77,47 @@ nav .links {
   display: none;
   transition: all 0.3s linear;
 
-  li {
+  .controls {
     width: 100%;
-    margin: 5px 5px;
-    border-radius: 8px;
-    width: 180px;
-    height: 30px;
-    padding: 10px 30px;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
 
-    a {
-      width: 100%;
+    .close {
+      cursor: pointer;
+      color: red;
+      font-size: 25px;
     }
   }
 
-  .link:hover {
-    background-color: #f0f0f0;
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
   }
 
-  .btn1 {
-    bottom: 62px;
-    position: absolute;
-  }
-
-  .btn {
-    bottom: 3px;
-    position: absolute;
-  }
-
-  .btn,
-  .btn1 {
-    width: 76%;
-    margin: 0px 31px;
-  }
-
-  .btn1:hover {
-    background: var(--gradient);
-    color: white;
+  .buttons a {
+    width: 100%;
+    text-align: center;
   }
 }
 
-nav .lg-links .menu {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  nav .lg-links .menu {
+@media (max-width: 1000px) {
+  nav .menu {
     display: block;
   }
 
   nav .buttons,
-  nav .lg-links .active {
+  nav .lg-links {
     display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  nav .sm-links {
+    display: none !important;
   }
 }

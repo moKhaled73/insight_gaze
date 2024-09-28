@@ -1,0 +1,29 @@
+.theme-container {
+  position: relative;
+  transition: all 0.3s linear;
+  border: 2px solid rgba(62, 57, 57, 0.571);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 22px;
+  cursor: pointer;
+  box-shadow: inset 0px 0px 4px gray;
+}
+
+.theme-container .theme {
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  transform: translateY(-50%);
+  transition: all 0.3s;
+}
+
+.theme-container .fa-sun.move {
+  transform: translate(100%, -50%) rotate(360deg);
+}
+
+.theme-container .fa-moon.move {
+  transform: translate(0px, -50%) rotate(-360deg);
+}

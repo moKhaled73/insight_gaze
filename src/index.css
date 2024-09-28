@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -13,6 +14,7 @@
   --ground: rgb(255, 255, 255, 0.45);
   --background: linear-gradient(90deg, var(--back), var(--ground));
   --DarkPurple: rgb(88, 22, 195);
+  --links-background: rgb(255, 255, 255, 0.45);
 }
 
 body[data-theme="dark"] {
@@ -23,7 +25,9 @@ body[data-theme="dark"] {
   --color-nav: white;
   background-color: #030f19;
   --DarkPurple: rgb(170 118 255);
+  --links-background: rgb(0, 0, 0, 0.85);
 }
+
 ::-webkit-scrollbar {
   width: 10px;
   background-color: transparent;
