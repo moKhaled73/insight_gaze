@@ -1,16 +1,26 @@
 header {
-  padding-left: 60px;
-  padding-right: 60px;
   padding-top: 100px;
   padding-bottom: 80px;
   background: url(../images/Desktop\ -\ 3.png) no-repeat center/cover;
 }
 
 header .container {
-  margin: 20px 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+header .container .row {
   display: flex;
   align-items: normal;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 900px) {
+  header .container .row {
+    flex-direction: column-reverse;
+    gap: 25px;
+  }
 }
 
 header .container .info {
@@ -24,10 +34,16 @@ header .container .info h1 {
 }
 
 header .container .info p {
-  width: 74%;
+  width: 80%;
   font-size: 20px;
   margin-top: 45px;
   font-family: auto;
+}
+
+@media (max-width: 1050px) {
+  header .container .info p {
+    width: 90%;
+  }
 }
 
 header .container .image {
@@ -35,7 +51,12 @@ header .container .image {
   width: 512px;
   height: 320px;
   overflow: hidden;
-  background: url(../images/Ellipses.png);
+}
+
+@media (max-width: 600px) {
+  header .container .image {
+    width: 100%;
+  }
 }
 
 .container .image .bottom-image,
@@ -76,8 +97,8 @@ header .buttons {
   gap: 15px;
 }
 
-header .buttons button,
-header .buttons a {
+header .buttons .try-free,
+header .buttons .view-demo {
   display: block;
   text-align: center;
   padding: 15px 30px;
@@ -92,7 +113,7 @@ header .buttons a {
   transition: all 0.3s linear;
 }
 
-header .buttons .btnhome2 {
+header .buttons .view-demo {
   background: transparent;
   color: var(--purple);
   border: 3px solid var(--purple);
@@ -101,26 +122,13 @@ header .buttons .btnhome2 {
   }
 }
 
-header .buttons button:hover,
-header .buttons a:hover {
+header .buttons .try-free:hover,
+header .buttons .view-demo:hover {
   transform: scale(1.1);
   box-shadow: 0rem 0rem 1.3rem var(--purple);
 }
 
-@media (max-width: 992px) {
-  header .container {
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-  }
-}
-
 @media (max-width: 768px) {
-  header .container img {
-    width: 100%;
-  }
-
   header .container .info h1 {
     width: 100%;
     font-size: 20px;

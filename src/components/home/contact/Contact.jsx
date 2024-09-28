@@ -6,84 +6,78 @@ const Contact = () => {
   return (
     <>
       <footer id="contact">
-        <div className="box">
-          <div className="continer">
-            <div className="logo">
-              <div className="big">
-                <div className="imlogo">
-                  <img src={logo} alt="" />
-                  <span>InsightGaze</span>
-                </div>
-                <div className="copy">
-                  <p>
-                    Eye-tracking AI to predict where viewers will focus in your
-                    images. Generate a heatmap for quick and clear visual
-                    insights.
-                  </p>
-                  <div className="icons">
-                    <i className="fa-brands fa-facebook"></i>
+        <div className="continer">
+          <div className="big">
+            <div className="imlogo">
+              <img src={logo} alt="" />
+              <span>InsightGaze</span>
+            </div>
+            <p className="copy">
+              Eye-tracking AI to predict where viewers will focus in your
+              images. Generate a heatmap for quick and clear visual insights.
+            </p>
+            <div className="icons">
+              <i className="fa-brands fa-facebook"></i>
 
-                    <i className="fa-brands fa-twitter"></i>
-                    <i className="fa-brands fa-instagram"></i>
-                    <i className="fa-brands fa-linkedin"></i>
-                  </div>
-                </div>
-              </div>
-              <div className="service">
-                <h3>Our Services</h3>
-                <div className="head">
-                  <i className="fa-solid fa-circle-check"></i>
-                  <span>Eye-tracking</span>
-                </div>
-                <div className="head">
-                  <i className="fa-solid fa-circle-check"></i>
-                  <span>Heatmaps</span>
-                </div>
-                <div className="head">
-                  <i className="fa-solid fa-circle-check"></i>
-                  <span>Reports</span>
-                </div>
-                <div className="head">
-                  <i className="fa-solid fa-circle-check"></i>
-                  <span>Tool Integration</span>
-                </div>
-              </div>
-              <div className="service">
-                <h3>Our Support</h3>
-                <div className="head">
-                  <i className="fa-solid fa-sun"></i>
-                  <span>Services</span>
-                </div>
-                <div className="head">
-                  <i className="fa-solid fa-sun"></i>
-                  <span>FAQs</span>
-                </div>
-                <div className="head">
-                  <i className="fa-solid fa-sun"></i>
-                  <span>Contact</span>
-                </div>
-                <div className="head">
-                  <i className="fa-solid fa-sun"></i>
-                  <span>Terms</span>
-                </div>
-              </div>
-              <div className="service">
-                <h3>Contact Info</h3>
-                <div className="email">
-                  <div className="head">
-                    <i className="fa-solid fa-envelope"></i>
-                    <p>Email Address</p>
-                  </div>
-                  <span className="small">Info@websiteinfo.com</span>
-                </div>
+              <i className="fa-brands fa-twitter"></i>
+              <i className="fa-brands fa-instagram"></i>
+              <i className="fa-brands fa-linkedin"></i>
+            </div>
+          </div>
+          <div className="service">
+            <h3>Our Services</h3>
+            <div className="head">
+              <i className="fa-solid fa-circle-check"></i>
+              <span>Eye-tracking</span>
+            </div>
+            <div className="head">
+              <i className="fa-solid fa-circle-check"></i>
+              <span>Heatmaps</span>
+            </div>
+            <div className="head">
+              <i className="fa-solid fa-circle-check"></i>
+              <span>Reports</span>
+            </div>
+            <div className="head">
+              <i className="fa-solid fa-circle-check"></i>
+              <span>Tool Integration</span>
+            </div>
+          </div>
+          <div className="service">
+            <h3>Our Support</h3>
+            <div className="head">
+              <i className="fa-solid fa-sun"></i>
+              <span>Services</span>
+            </div>
+            <div className="head">
+              <i className="fa-solid fa-sun"></i>
+              <span>FAQs</span>
+            </div>
+            <div className="head">
+              <i className="fa-solid fa-sun"></i>
+              <span>Contact</span>
+            </div>
+            <div className="head">
+              <i className="fa-solid fa-sun"></i>
+              <span>Terms</span>
+            </div>
+          </div>
+          <div className="service">
+            <h3>Contact Info</h3>
 
-                <div className="address">
-                  <div className="head">
-                    <i className="fa-solid fa-location-dot"></i>
-                    <p>Address</p>
-                  </div>
-                  <span className="small">99 Rioville St.Big City</span>
-                </div>
+            <div className="head">
+              <i className="fa-solid fa-envelope"></i>
+              <div>
+                <p>Email Address</p>
+                <span className="small">Info@websiteinfo.com</span>
+              </div>
+            </div>
+
+            <div className="head">
+              <i className="fa-solid fa-location-dot"></i>
+              <div>
+                <p>Address</p>
+                <span className="small">99 Rioville St.Big City</span>
               </div>
             </div>
           </div>

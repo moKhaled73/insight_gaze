@@ -1,91 +1,86 @@
 .services {
   text-align: center;
   padding-top: 20px;
-  padding-left: 60px;
-  padding-right: 60px;
+}
 
-  h1 {
-    color: var(--words);
-    font-size: 53px;
+.services .container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.services .container h1 {
+  color: var(--words);
+  font-size: 53px;
+}
+
+.services .container .group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.services .container .group .srv {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  border: 2px solid var(--purple);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: start;
+  box-shadow: 0px 0.5rem 1rem #808080b0;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
+  &:hover {
+    transform: scale(1.1) translateY(-5px);
+    transition: all 0.3s linear;
+    border: 2px solid var(--purple);
   }
+}
 
-  .group {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 50px;
-    padding: 54px 1px;
-    max-width: 1200px;
-    margin: 0 auto;
+.services .container .group .srv i {
+  font-size: 30px;
+}
 
-    .srv {
-      backdrop-filter: blur(10px);
-      border: 2px solid var(--purple);
-      border-radius: 10px;
-      padding: 20px;
-      text-align: start;
-      flex: 1;
-      box-shadow: 0px 0.5rem 1rem #808080b0;
-      max-width: 300px;
-      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-      i {
-        text-align: start;
-        margin: 0px 34px;
-        font-size: 30px;
-      }
+.services .container .group .srv h2 {
+  font-size: 20px;
+}
 
-      h2 {
-        margin: 20px;
-        font-family: sans-serif;
-      }
+.services .container .group .srv p {
+  font-family: system-ui;
+}
 
-      p {
-        text-align: start;
-        margin: 20px;
-        font-family: system-ui;
-      }
+.services .container .group .srv .links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-      a {
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        text-decoration: none;
-        font-weight: 700;
-        color: var(--DarkPurple);
-        font-size: 15px;
-
-        span {
-          margin-left: 7px;
-        }
-
-        span:hover {
-          text-decoration: underline;
-        }
-
-        i {
-          margin: 0px 9px;
-          margin-top: 8px;
-          color: var(--gradient);
-          font-size: 15px;
-        }
-      }
-
-      .btns {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        .learn {
-          text-decoration: underline;
-        }
-      }
-    }
-
-    .srv:hover {
-      transform: scale(1.1) translateY(-10px);
-      transition: all 0.3s linear;
-      border: 2px solid var(--purple);
-    }
+.services .container .group .srv .links .try {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--DarkPurple);
+  font-size: 15px;
+  i {
+    color: var(--gradient);
+    margin-top: 2px;
+    font-size: 14px;
   }
+}
+
+.services .container .group .srv .links .learn-more {
+  color: var(--purple);
+  font-weight: 700;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.services .container .group .srv .links .try:hover {
+  text-decoration: underline;
 }
 
 .services .group .srv .Btn i:hover {
