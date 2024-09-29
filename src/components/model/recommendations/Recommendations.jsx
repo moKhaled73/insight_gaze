@@ -1,12 +1,12 @@
-import { useRef, useState } from "react";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+/* eslint-disable react/prop-types */
+import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { Buffer } from "buffer"; // Buffer polyfill for the browser
 import { useImageFile } from "../../../context/ImageFileProvider";
 import "./Recommendations.css";
 import GenerateButton from "../button/GenerateButton";
 import OriginalImage from "../OriginalImage";
 import TryAgainButton from "../button/TryAgainButton";
+import { useRecommendations } from "../../../api/recommendations";
 
 const prompts = {
   human_interface_guidelines:
@@ -21,58 +21,48 @@ const prompts = {
     "Assess the design and suggest enhancements based on the specific platform's design guidelines. Whether it's iOS, Android, Windows, or web, ensure the recommendations adhere to the unique principles of the target platform. Emphasize creating an intuitive user experience that aligns with the native look and feel of the platform",
 };
 
-const genAI = new GoogleGenerativeAI("AIzaSyCsnFKo_eNQC_FXS6ImzO_2pjXPlF5XlhY");
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+const TypingEffect = ({ fullText, speed = 2 }) => {
+  const [displayedText, setDisplayedText] = useState("");
+
+  console.log(fullText);
+
+  useEffect(() => {
+    let index = 0;
+
+    const intervalId = setInterval(() => {
+      setDisplayedText((prev) => prev + fullText[index]);
+      index += 1;
+
+      if (index === fullText.length) {
+        clearInterval(intervalId);
+      }
+    }, speed); // سرعة الكتابة
+
+    return () => clearInterval(intervalId); // تنظيف التأثير عند تفريغ المكون
+  }, [fullText, speed]);
+
+  return <ReactMarkdown>{displayedText}</ReactMarkdown>;
+};
 
 const Recommendations = () => {
   const { imageFile } = useImageFile();
   const imageContainerRef = useRef(null);
   const [prompt, setPrompt] = useState("human_interface_guidelines");
   const [response, setResponse] = useState("");
-  const [loading, setLoading] = useState(false);
 
-  const fileToGenerativePart = (file, mimeType) => {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const base64String = Buffer.from(event.target.result).toString(
-          "base64"
-        );
-        resolve({
-          inlineData: {
-            data: base64String,
-            mimeType,
-          },
-        });
-      };
-      reader.onerror = reject;
-      reader.readAsArrayBuffer(file);
-    });
+  const onSuccess = (data) => {
+    console.log(data);
+    setResponse(data.data.recommendations);
   };
+  const { mutate: generateRecommendations, isLoading } =
+    useRecommendations(onSuccess);
 
-  // Generate content by calling the API
-  const generateContent = async () => {
-    if (!imageFile) {
-      alert("Please select an image file.");
-      return;
-    }
-    setResponse("");
-    setLoading(true);
-    try {
-      const mimeType = imageFile.type;
-      const imagePart = await fileToGenerativePart(imageFile, mimeType);
-
-      const result = await model.generateContentStream([
-        prompts[prompt],
-        imagePart,
-      ]);
-      for await (const response of result.stream) {
-        setResponse((prevResponse) => prevResponse + response.text());
-      }
-    } catch (error) {
-      console.error("Error generating content:", error);
-    } finally {
-      setLoading(false);
+  const generateRecommendationsHandler = () => {
+    if (imageFile) {
+      const formData = new FormData();
+      formData.append("image", imageFile);
+      formData.append("prompt", prompts[prompt]);
+      generateRecommendations(formData);
     }
   };
 
@@ -108,7 +98,7 @@ const Recommendations = () => {
             </option>
           </select>
           <div className="recommendation-response">
-            <ReactMarkdown>{response}</ReactMarkdown>
+            {response && <TypingEffect fullText={response} />}
           </div>
         </div>
       </div>
@@ -117,8 +107,8 @@ const Recommendations = () => {
       ) : (
         <GenerateButton
           text={"Generate Recommendation"}
-          loading={loading}
-          onClickHandler={generateContent}
+          loading={isLoading}
+          onClickHandler={generateRecommendationsHandler}
         />
       )}
     </>
