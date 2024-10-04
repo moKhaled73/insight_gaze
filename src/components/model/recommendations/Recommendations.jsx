@@ -24,16 +24,15 @@ const prompts = {
 const TypingEffect = ({ fullText, speed = 2 }) => {
   const [displayedText, setDisplayedText] = useState("");
 
-  console.log(fullText);
-
   useEffect(() => {
+    setDisplayedText("");
     let index = 0;
 
     const intervalId = setInterval(() => {
       setDisplayedText((prev) => prev + fullText[index]);
       index += 1;
 
-      if (index === fullText.length) {
+      if (index === fullText.length - 1) {
         clearInterval(intervalId);
       }
     }, speed); // سرعة الكتابة
@@ -47,8 +46,11 @@ const TypingEffect = ({ fullText, speed = 2 }) => {
 const Recommendations = () => {
   const { imageFile } = useImageFile();
   const imageContainerRef = useRef(null);
-  const [prompt, setPrompt] = useState("human_interface_guidelines");
+  const [prompt, setPrompt] = useState(
+    "Analyze the current design and provide recommendations for improvements based on Apple's Human Interface Guidelines (HIG). Ensure the suggestions prioritize consistency with iOS and macOS platform conventions, including typography, iconography, layout, and interaction patterns. Focus on optimizing user experience for Apple device users."
+  );
   const [response, setResponse] = useState("");
+  const [showPromptInput, setShowPromptInput] = useState(false);
 
   const onSuccess = (data) => {
     console.log(data);
@@ -58,10 +60,17 @@ const Recommendations = () => {
     useRecommendations(onSuccess);
 
   const generateRecommendationsHandler = () => {
-    if (imageFile) {
+    if ((imageFile, prompt)) {
       const formData = new FormData();
       formData.append("image", imageFile);
-      formData.append("prompt", prompts[prompt]);
+      formData.append(
+        "prompt",
+        `${prompt} ${
+          showPromptInput
+            ? ".if the prompt is not about generate recommendations for designs not provide response"
+            : ""
+        }`
+      );
       generateRecommendations(formData);
     }
   };
@@ -77,7 +86,8 @@ const Recommendations = () => {
             name="guidelines"
             id="guidelines"
             onChange={(e) => {
-              setPrompt(e.target.value);
+              setPrompt(prompts[e.target.value]);
+              setShowPromptInput(e.target.value === "custom-prompt");
               setResponse("");
             }}
           >
@@ -96,7 +106,16 @@ const Recommendations = () => {
             <option value="platform_specific_guidelines">
               Platform-Specific Guidelines
             </option>
+            <option value="custom-prompt">Custom Prompt</option>
           </select>
+          {showPromptInput && (
+            <input
+              type="text"
+              className="prompt-input"
+              placeholder="Enter your prompt"
+              onChange={(e) => setPrompt(e.target.value)}
+            />
+          )}
           <div className="recommendation-response">
             {response && <TypingEffect fullText={response} />}
           </div>
