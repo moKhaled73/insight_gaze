@@ -37,7 +37,7 @@
 .recommendations-container .recommendations select {
   width: 100%;
   height: 32px;
-  padding: 0 10px;
+  padding: 4px 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
@@ -70,4 +70,14 @@
 .recommendations-container .recommendations .recommendation-response {
   overflow: auto;
   padding: 10px;
+}
+
+.recommendations-container .recommendations .recommendation-response p {
+  margin: 16px 0;
+}
+
+.recommendations-container .recommendations .recommendation-response ul {
+  list-style: initial;
+  padding-left: 40px;
+  margin: 16px 0;
 }

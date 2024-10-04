@@ -5,9 +5,11 @@ import before from "../../assets/before.jpg";
 import after from "../../assets/after.jpg";
 import before_spec from "../../assets/before_spec.png";
 import after_spec from "../../assets/after_spec.png";
+import { useNavigate } from "react-router-dom";
 
 const Recommendations = () => {
   const [activeRule, setActiveRule] = useState("con1");
+  const navigate = useNavigate();
 
   return (
     <section className="recommend">
@@ -93,7 +95,6 @@ const Recommendations = () => {
                   </p>
                   <div className="img">
                     <div className="before">
-                      {" "}
                       <img src={before} alt="" />
                     </div>
                     <div className="after">
@@ -105,7 +106,11 @@ const Recommendations = () => {
                     Exercitationem quas eum impedit porro delectus, odio
                     placeat? Recusandae itaque eligendi fugit?
                   </p>
-                  <button>Try it</button>
+                  <button
+                    onClick={() => navigate("/model?tab=recommendations")}
+                  >
+                    Try it
+                  </button>
                 </div>
               ) : activeRule === "con2" ? (
                 <div id="con2" className="content">
@@ -142,7 +147,11 @@ const Recommendations = () => {
                     Exercitationem quas eum impedit porro delectus, odio
                     placeat? Recusandae itaque eligendi fugit?
                   </p>
-                  <button>Try it</button>
+                  <button
+                    onClick={() => navigate("/model?tab=recommendations")}
+                  >
+                    Try it
+                  </button>
                 </div>
               ) : activeRule === "con3" ? (
                 <div id="con3" className="content">
@@ -176,7 +185,11 @@ const Recommendations = () => {
                     Exercitationem quas eum impedit porro delectus, odio
                     placeat? Recusandae itaque eligendi fugit?
                   </p>
-                  <button>Try it</button>
+                  <button
+                    onClick={() => navigate("/model?tab=recommendations")}
+                  >
+                    Try it
+                  </button>
                 </div>
               ) : activeRule === "con4" ? (
                 <div id="con4" className="content">
@@ -207,7 +220,11 @@ const Recommendations = () => {
                     Exercitationem quas eum impedit porro delectus, odio
                     placeat? Recusandae itaque eligendi fugit?
                   </p>
-                  <button>Try it</button>
+                  <button
+                    onClick={() => navigate("/model?tab=recommendations")}
+                  >
+                    Try it
+                  </button>
                 </div>
               ) : activeRule === "con5" ? (
                 <div id="con5" className="content">
@@ -238,7 +255,11 @@ const Recommendations = () => {
                     Exercitationem quas eum impedit porro delectus, odio
                     placeat? Recusandae itaque eligendi fugit?
                   </p>
-                  <button>Try it</button>
+                  <button
+                    onClick={() => navigate("/model?tab=recommendations")}
+                  >
+                    Try it
+                  </button>
                 </div>
               ) : activeRule === "con6" ? (
                 <div id="con6" className="content">
@@ -285,7 +306,11 @@ const Recommendations = () => {
                     Exercitationem quas eum impedit porro delectus, odio
                     placeat? Recusandae itaque eligendi fugit?
                   </p>
-                  <button>Try it</button>
+                  <button
+                    onClick={() => navigate("/model?tab=recommendations")}
+                  >
+                    Try it
+                  </button>
                 </div>
               ) : (
                 <div id="con7" className="content">
@@ -318,7 +343,11 @@ const Recommendations = () => {
                     Exercitationem quas eum impedit porro delectus, odio
                     placeat? Recusandae itaque eligendi fugit?
                   </p>
-                  <button>Try it</button>
+                  <button
+                    onClick={() => navigate("/model?tab=recommendations")}
+                  >
+                    Try it
+                  </button>
                 </div>
               )}
             </div>
