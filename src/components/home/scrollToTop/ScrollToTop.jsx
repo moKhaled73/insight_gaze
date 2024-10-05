@@ -1,10 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import "./scrollToTop.css";
 
 const ScrollToTop = () => {
   const scrollBtn = useRef(null);
 
-  useEffect(() => {
+  window.onload = () => {
     window.onscroll = function () {
       if (scrollY >= 400) {
         scrollBtn.current.style.display = "block";
@@ -12,7 +12,7 @@ const ScrollToTop = () => {
         scrollBtn.current.style.display = "none";
       }
     };
-  }, []);
+  };
 
   const scrollToTop = () => {
     scroll({
