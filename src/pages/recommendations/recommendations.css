@@ -2,10 +2,9 @@
   color: black;
   display: flex;
   justify-content: center;
-  padding-top: 45px;
-  padding-bottom: 45px;
-  background: url(../images/photo_2024-09-24_18-09-11.jpg) no-repeat
-    center/cover;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: url(../../../src/assets/photo_2024-10-05_19-31-58.jpg) no-repeat center/cover;
 
   .group {
     text-align: center;
@@ -15,11 +14,12 @@
     color: black;
     border: 2px solid rgba(137, 135, 135, 0.5);
     border-radius: 10px;
-    padding: 30px;
+    padding: 30px 0px;
     backdrop-filter: blur(30px);
-    /* تأثير 3D */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3),
-      /* الظل السفلي */ 0 20px 40px rgba(0, 0, 0, 0.2); /* الظل الأعمق */
+      /* الظل السفلي */
+      0 20px 40px rgba(0, 0, 0, 0.2);
+    /* الظل الأعمق */
   }
 
   h1 {
@@ -37,7 +37,7 @@
 }
 
 .recommend .box {
-  background: #e5e2e6;
+  background: var(--background-color);
 }
 
 .recommend .box .rules {
@@ -58,7 +58,7 @@
   padding: 0;
   display: flex;
   gap: 10px;
-  margin-top: 40px;
+  margin: 60px 0px;
 
   li {
     cursor: pointer;
@@ -66,6 +66,7 @@
     padding: 10px;
     font-size: 14px;
     text-align: center;
+    font-weight: 600;
   }
 
   li:hover {
@@ -79,7 +80,8 @@
     background-image: var(--gradient);
     color: white;
     border-radius: 10px;
-    box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.5);
+    /*box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.5);*/
+    border: 2px solid var(--purple);
   }
 }
 
@@ -94,11 +96,12 @@
 }
 
 .recommend .content {
-  background-color: #f0f0f0;
+  background-color: var(--background-color);
   padding: 20px;
   border-radius: 5px;
   border: 2px solid var(--purple);
   text-align: center;
+
   p {
     padding-bottom: 20px;
     text-align: start;
@@ -106,74 +109,98 @@
     line-height: 1.7;
 
     span {
-      font-size: 15px;
-      color: #590486;
+      font-size: 16px;
+      color: var(--words);
       font-weight: 600;
     }
   }
 
-  button {
-    color: white;
-    border-radius: 8px;
-    border: 2px solid var(--words);
-    background: var(--gradient);
-    margin: 10px auto;
-    font-size: 20px;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 8px 50px;
-    transition: all 0.1s ease;
-    box-shadow: 0px 0.5rem 1rem rgb(201, 201, 201);
-  }
+.rule {
+    display: flex;
+    text-align: start;
+    justify-content: center;
+    gap: 14px;
+    padding: 25px 10px;
 
-  button:active {
-    box-shadow: none;
-    transform: translateY(4px);
-  }
-}
-
-.recommend .img {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-
-  .before,
-  .after {
-    position: relative;
-    width: 300px;
-
-    img {
-      width: 100%;
+    .header {
+      font-size: 15px;
+      color: var(--words);
+      font-weight: 600;
+      line-height: 1.7;
+    }
+      .example {
+        padding-bottom: 20px;
+        text-align: start;
+        /* width: 700px; */
+        line-height: 1.6;
+      
     }
   }
-}
 
-.recommend .before::before {
-  content: "Before";
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  background-color: #a7a7a75c;
-  color: black;
-  padding: 5px 10px;
-  border-radius: 53%;
-  font-weight: 800;
-  border: 2px solid #a116d259;
-  font-size: 12px;
-  z-index: 1;
-}
+    button {
+      color: white;
+      border-radius: 8px;
+      border: 2px solid var(--words);
+      background: var(--gradient);
+      margin: 10px auto;
+      font-size: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 8px 50px;
+      transition: all 0.1s ease;
+      box-shadow: 0px 0.5rem 1rem rgba(201, 201, 201, 0.242);
+    }
 
-.recommend .after::after {
-  content: "After";
-  position: absolute;
-  background-color: #a7a7a75c;
-  top: 5px;
-  right: 5px;
-  color: black;
-  padding: 5px 10px;
-  border-radius: 53%;
-  font-weight: 800;
-  border: 2px solid #a116d259;
-  font-size: 12px;
-  z-index: 1;
-}
+    button:active {
+      box-shadow: none;
+      transform: translateY(4px);
+    }
+  }
+
+  .recommend .img {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 25px 0px;
+
+    .before,
+    .after {
+      position: relative;
+      width: 300px;
+      border: 3px solid rgba(156, 156, 156, 0.521);
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .recommend .before::before {
+    content: "Before";
+    position: absolute;
+    top: 0;
+    left: 36%;
+    background-color: #a7a7a75c;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 53%;
+    font-weight: 800;
+    border: 2px solid #a116d259;
+    font-size: 12px;
+    z-index: 1;
+  }
+
+  .recommend .after::after {
+    content: "After";
+    position: absolute;
+    background-color: #a7a7a75c;
+    top: 0;
+    right: 40%;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 53%;
+    font-weight: 800;
+    border: 2px solid #a116d259;
+    font-size: 12px;
+    z-index: 1;
+  }

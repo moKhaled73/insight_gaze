@@ -5,7 +5,7 @@
 }
 
 :root {
-  --words: #6d04b9;
+  --words: #5f00a2;
   --purple: #7406c2;
   --pink: #c709fc;
   --gradient: linear-gradient(100deg, var(--purple), var(--pink));
@@ -26,6 +26,7 @@ body[data-theme="dark"] {
   background-color: #030f19;
   --DarkPurple: rgb(170 118 255);
   --links-background: rgb(0, 0, 0, 0.85);
+  --words: #c182ff;
 }
 
 ::-webkit-scrollbar {
