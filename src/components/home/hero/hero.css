@@ -1,7 +1,7 @@
 header {
   padding-top: 100px;
   padding-bottom: 80px;
-  background: url(../images/Desktop\ -\ 3.png) no-repeat center/cover;
+  background: url(../../../src/assets/Desktop.png) no-repeat center/cover;
 }
 
 header .container {
@@ -38,6 +38,7 @@ header .container .info p {
   font-size: 20px;
   margin-top: 45px;
   font-family: auto;
+  line-height: 1.6;
 }
 
 @media (max-width: 1050px) {
@@ -68,7 +69,6 @@ header .container .image {
   height: 100%;
   border-radius: 15px;
 }
-
 .container .image .bottom-image {
   z-index: 1;
 }
