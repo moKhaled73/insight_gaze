@@ -2,10 +2,11 @@ import axios from "axios";
 import { useMutation } from "react-query";
 
 const recommendations = (data) => {
-  return axios.post(
-    "https://test-api-git-main-mohamed-khaleds-projects-a009ea96.vercel.app/generate_ui_recommendations",
-    data
-  );
+  return axios.post("http://127.0.0.1:8000/generate_ui_recommendations", data);
+};
+
+const ourRecommendations = (data) => {
+  return axios.post("http://127.0.0.1:8000/our_recommendations", data);
 };
 
 const useRecommendations = (onSuccess) => {
@@ -14,4 +15,10 @@ const useRecommendations = (onSuccess) => {
   });
 };
 
-export { useRecommendations };
+const useOurRecommendations = (onSuccess) => {
+  return useMutation(ourRecommendations, {
+    onSuccess,
+  });
+};
+
+export { useRecommendations, useOurRecommendations };

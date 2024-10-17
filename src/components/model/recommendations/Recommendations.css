@@ -91,6 +91,15 @@
   margin: 16px 0;
 }
 
+.recommendations-container
+  .recommendations
+  .recommendation-response
+  p.selected {
+  background: #f0f0f0;
+  border-left: 5px solid var(--purple);
+  padding: 10px;
+}
+
 .recommendations-container .recommendations .recommendation-response ul {
   list-style: initial;
   padding-left: 40px;
