@@ -35,51 +35,53 @@ const Model = () => {
         <meta name="description" content="Model" />
       </Helmet>
       <main>
-        <ul className="tabs">
-          <li
-            onClick={() => setActiveTab("heatmap")}
-            className={`${activeTab === "heatmap" && "active"}`}
-          >
-            Heatmap
-          </li>
-          <li
-            onClick={() => setActiveTab("scanpath")}
-            className={`${activeTab === "scanpath" && "active"}`}
-          >
-            Scanpath
-          </li>
-          <li
-            onClick={() => setActiveTab("recommendations")}
-            className={`${activeTab === "recommendations" && "active"}`}
-          >
-            Recommendations
-          </li>
-        </ul>
-        <div className="container">
-          {!imageFile ? (
-            <SelectImage />
-          ) : (
-            <>
+        <div className="cont">
+          <ul className="tabs">
+            <li
+              onClick={() => setActiveTab("heatmap")}
+              className={`${activeTab === "heatmap" && "active"}`}
+            >
+              Heatmap
+            </li>
+            <li
+              onClick={() => setActiveTab("scanpath")}
+              className={`${activeTab === "scanpath" && "active"}`}
+            >
+              Scanpath
+            </li>
+            <li
+              onClick={() => setActiveTab("recommendations")}
+              className={`${activeTab === "recommendations" && "active"}`}
+            >
+              Recommendations
+            </li>
+          </ul>
+          <div className="container">
+            {!imageFile ? (
+              <SelectImage />
+            ) : (
               <>
-                {activeTab === "heatmap" ? (
-                  <Heatmap />
-                ) : activeTab === "scanpath" ? (
-                  <Scanpath />
-                ) : (
-                  <Recommendations />
-                )}
+                <>
+                  {activeTab === "heatmap" ? (
+                    <Heatmap />
+                  ) : activeTab === "scanpath" ? (
+                    <Scanpath />
+                  ) : (
+                    <Recommendations />
+                  )}
+                </>
+                <IoMdCloseCircle
+                  className="close"
+                  onClick={() => {
+                    setImageFile(null);
+                    setHeatmap3s(null);
+                    setHeatmap7s(null);
+                    setScanpath(null);
+                  }}
+                />
               </>
-              <IoMdCloseCircle
-                className="close"
-                onClick={() => {
-                  setImageFile(null);
-                  setHeatmap3s(null);
-                  setHeatmap7s(null);
-                  setScanpath(null);
-                }}
-              />
-            </>
-          )}
+            )}
+          </div>
         </div>
       </main>
     </>

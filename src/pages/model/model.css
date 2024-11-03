@@ -1,6 +1,11 @@
 main {
   background-color: var(--gray-background);
-  padding: 10px 20px;
+  margin-top: 25px;
+}
+
+main .cont {
+  width: 90%;
+  margin: 0 auto;
 }
 
 /* start tabs */
@@ -53,8 +58,7 @@ main .container {
   flex-direction: column;
   gap: 30px;
   background-color: var(--white-background);
-  margin: 30px auto 0;
-  width: fit-content;
+  margin: 30px auto 30px;
 }
 
 main .container .close {

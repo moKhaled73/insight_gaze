@@ -36,7 +36,7 @@ import Markdown from "react-markdown";
 const Recommendations = () => {
   const { imageFile } = useImageFile();
   const imageContainerRef = useRef(null);
-  const [guideline, setGuideline] = useState("human_interface_guidelines");
+  const [guideline, setGuideline] = useState("human interface guidelines");
   const [response, setResponse] = useState("");
   const [boundingBox, setBoundingBox] = useState([]);
   const [prompt, setPrompt] = useState("");
