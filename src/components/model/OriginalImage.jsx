@@ -1,9 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useRef } from "react";
-import { useImageFile } from "../../context/ImageFileProvider";
 
-const OriginalImage = ({ boundingBox, imageContainerRef }) => {
-  const { imageFile } = useImageFile();
+const OriginalImage = ({ boundingBox, imageContainerRef, imageFile }) => {
   const originalRef = useRef(null);
   const boundingBoxRef = useRef(null);
 

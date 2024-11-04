@@ -16,8 +16,17 @@ import { useSearchParams } from "react-router-dom";
 
 const Model = () => {
   const [activeTab, setActiveTab] = useState("heatmap");
-  const { imageFile, setImageFile, setHeatmap3s, setHeatmap7s, setScanpath } =
-    useImageFile();
+  const {
+    heatmapImage,
+    setHeatmapImage,
+    scanpathImage,
+    setScanpathImage,
+    recommendationImage,
+    setRecommendationImage,
+    setHeatmap3s,
+    setHeatmap7s,
+    setScanpath,
+  } = useImageFile();
 
   const [searchParams] = useSearchParams();
   const tab = searchParams.get("tab");
@@ -57,30 +66,56 @@ const Model = () => {
             </li>
           </ul>
           <div className="container">
-            {!imageFile ? (
-              <SelectImage />
-            ) : (
+            {activeTab === "heatmap" ? (
               <>
-                <>
-                  {activeTab === "heatmap" ? (
+                {heatmapImage ? (
+                  <>
                     <Heatmap />
-                  ) : activeTab === "scanpath" ? (
-                    <Scanpath />
-                  ) : (
-                    <Recommendations />
-                  )}
-                </>
-                <IoMdCloseCircle
-                  className="close"
-                  onClick={() => {
-                    setImageFile(null);
-                    setHeatmap3s(null);
-                    setHeatmap7s(null);
-                    setScanpath(null);
-                  }}
-                />
+                    <IoMdCloseCircle
+                      className="close"
+                      onClick={() => {
+                        setHeatmapImage(null);
+                        setHeatmap3s(null);
+                        setHeatmap7s(null);
+                      }}
+                    />
+                  </>
+                ) : (
+                  <SelectImage imageType="heatmap" />
+                )}
               </>
-            )}
+            ) : activeTab === "scanpath" ? (
+              <>
+                {scanpathImage ? (
+                  <>
+                    <Scanpath />
+                    <IoMdCloseCircle
+                      className="close"
+                      onClick={() => {
+                        setScanpathImage(null);
+                        setScanpath(null);
+                      }}
+                    />
+                  </>
+                ) : (
+                  <SelectImage imageType="scanpath" />
+                )}
+              </>
+            ) : activeTab === "recommendations" ? (
+              <>
+                {recommendationImage ? (
+                  <>
+                    <Recommendations />
+                    <IoMdCloseCircle
+                      className="close"
+                      onClick={() => setRecommendationImage(null)}
+                    />
+                  </>
+                ) : (
+                  <SelectImage imageType="recommendation" />
+                )}
+              </>
+            ) : null}
           </div>
         </div>
       </main>

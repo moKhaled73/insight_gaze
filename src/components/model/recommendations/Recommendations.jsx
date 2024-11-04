@@ -32,7 +32,7 @@ import Markdown from "react-markdown";
 // };
 
 const Recommendations = () => {
-  const { imageFile } = useImageFile();
+  const { recommendationImage } = useImageFile();
   const imageContainerRef = useRef(null);
   const [guideline, setGuideline] = useState("human interface guidelines");
   const [response, setResponse] = useState("");
@@ -54,15 +54,15 @@ const Recommendations = () => {
   } = useOurRecommendations(onSuccess);
 
   const generateRecommendationsHandler = () => {
-    if (guideline === "custom-prompt" && prompt && imageFile) {
+    if (guideline === "custom-prompt" && prompt && recommendationImage) {
       const formData = new FormData();
-      formData.append("image", imageFile);
+      formData.append("image", recommendationImage);
       formData.append("prompt", prompt);
       generateRecommendations(formData);
     } else {
-      if (imageFile && guideline) {
+      if (recommendationImage && guideline) {
         const formData = new FormData();
-        formData.append("image", imageFile);
+        formData.append("image", recommendationImage);
         formData.append("guideline", guideline);
         generateOurRecommendations(formData);
       }
@@ -80,6 +80,7 @@ const Recommendations = () => {
       <div className="recommendations-container">
         <div className="image" ref={imageContainerRef}>
           <OriginalImage
+            imageFile={recommendationImage}
             boundingBox={boundingBox}
             imageContainerRef={imageContainerRef}
           />

@@ -5,7 +5,8 @@ import GenerateButton from "../button/GenerateButton";
 import ImageContainer from "../imageContainer/ImageContainer";
 import "./heatmap.css";
 const Heatmap = () => {
-  const { imageFile, setHeatmap3s, setHeatmap7s, heatmap3s } = useImageFile();
+  const { heatmapImage, setHeatmap3s, setHeatmap7s, heatmap3s } =
+    useImageFile();
 
   const onSuccessHeatmap3s = (data) => {
     setHeatmap3s(URL.createObjectURL(data.data));
@@ -20,9 +21,9 @@ const Heatmap = () => {
     useHeatmap7s(onSuccessHeatmap7s);
 
   const generateHeatmap = () => {
-    if (imageFile) {
+    if (heatmapImage) {
       const formData = new FormData();
-      formData.append("file", imageFile);
+      formData.append("file", heatmapImage);
       generateHeatmap3s(formData);
       generateHeatmap7s(formData);
     }
