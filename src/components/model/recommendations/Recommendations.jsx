@@ -1,10 +1,8 @@
-/* eslint-disable react/prop-types */
 import { useEffect, useRef, useState } from "react";
 import { useImageFile } from "../../../context/ImageFileProvider";
 import "./Recommendations.css";
 import GenerateButton from "../button/GenerateButton";
 import OriginalImage from "../OriginalImage";
-import TryAgainButton from "../button/TryAgainButton";
 import {
   useOurRecommendations,
   useRecommendations,
@@ -143,7 +141,11 @@ const Recommendations = () => {
         </div>
       </div>
       {response ? (
-        <TryAgainButton />
+        <GenerateButton
+          text={"Generate Again"}
+          loading={isLoadingOurRecommendations || isLoading}
+          onClickHandler={generateRecommendationsHandler}
+        />
       ) : (
         <GenerateButton
           text={"Generate Recommendation"}
