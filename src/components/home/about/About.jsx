@@ -41,7 +41,7 @@ const About = () => {
               for our service, which includes additional features to enhance
               your visual content strategy.
             </p>
-            <button>Learn More...</button>
+            {/* <button>Learn More...</button> */}
           </div>
         </div>
       </div>

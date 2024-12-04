@@ -1,18 +1,40 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import "./scrollToTop.css";
 
 const ScrollToTop = () => {
   const scrollBtn = useRef(null);
 
-  window.onload = () => {
-    window.onscroll = function () {
-      if (scrollY >= 400) {
-        scrollBtn.current.style.display = "block";
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 400) {
+        if (scrollBtn.current) {
+          scrollBtn.current.style.display = "block";
+        }
       } else {
-        scrollBtn.current.style.display = "none";
+        if (scrollBtn.current) {
+          scrollBtn.current.style.display = "none";
+        }
       }
     };
-  };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  //   window.onload = () => {
+  //     window.onscroll = function () {
+  //       if (scrollbars) {
+  //         if (scrollY >= 400) {
+  //           scrollBtn.current.style.display = "block";
+  //         } else {
+  //           scrollBtn.current.style.display = "none";
+  //         }
+  //       }
+  //     };
+  //   };
+  // }, []);
 
   const scrollToTop = () => {
     scroll({

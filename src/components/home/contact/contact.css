@@ -4,7 +4,8 @@ footer {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background: var(--back);
+  background-color: #4b2480;
+  color: white;
 }
 
 footer .continer {
@@ -49,7 +50,7 @@ footer .continer .big {
 
     i {
       font-size: 30px;
-      color: var(--purple);
+      color: #d058f2;
     }
   }
 }
@@ -64,7 +65,7 @@ footer .continer .service {
     gap: 10px;
     margin-top: 15px;
     i {
-      color: var(--purple);
+      color: #d058f2;
     }
     .small {
       font-size: 14px;
@@ -91,12 +92,12 @@ footer .continer .service {
 }
 
 .footer {
-  background: var(--purple);
+  background-color: #4b2480;
   color: white;
   padding: 15px 10px;
   text-align: center;
   font-size: 20px;
-
+border-top: 1px solid white;
   span {
     font-weight: bold;
     color: black;

@@ -41,18 +41,21 @@ nav .buttons {
 nav .buttons a {
   border: 2px solid var(--gradient);
   border-radius: 32px;
-  padding: 8px 20px;
+  padding: 10px 28px;
   background: var(--gradient);
   color: white;
   font-size: 19px;
   cursor: pointer;
   transition: all 0.3s linear;
+  font-size:20px;
+  font-weight: 500;
 }
 
 nav .buttons .signup {
   background: transparent;
   color: var(--purple);
-  border: 2px solid var(--purple);
+  border: 2.15px solid var(--purple);
+
 }
 
 nav .buttons a:hover {

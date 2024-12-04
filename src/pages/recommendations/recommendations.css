@@ -17,9 +17,7 @@
     padding: 30px 0px;
     backdrop-filter: blur(30px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3),
-      /* الظل السفلي */
       0 20px 40px rgba(0, 0, 0, 0.2);
-    /* الظل الأعمق */
   }
 
   h1 {
@@ -59,6 +57,8 @@
   display: flex;
   gap: 10px;
   margin: 60px 0px;
+  justify-content: center;
+  align-items: center;
 
   li {
     cursor: pointer;

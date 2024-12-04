@@ -1,6 +1,13 @@
 .services {
   text-align: center;
   padding-top: 20px;
+  font-size: 18px;
+}
+
+*::selection {
+  color: white;
+  /* background: rgb(157, 59, 249); */
+  background: blueviolet;
 }
 
 .services .container {
@@ -15,7 +22,7 @@
 
 .services .container .group {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 50px;
   margin-top: 50px;
 }
@@ -43,11 +50,25 @@
 }
 
 .services .container .group .srv h2 {
-  font-size: 20px;
+  font-size: 25px;
+  font-family: "Philosopher", sans-serif;
 }
 
 .services .container .group .srv p {
-  font-family: system-ui;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.4;
+  /* background: linear-gradient(to right, #60476c,#60476c );
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: all 500ms ease-in-out;
+  display: inline;
+  &:hover{
+    background-size: 100% 100%;
+    color: white;
+  } */
 }
 
 .services .container .group .srv .links {
@@ -63,7 +84,8 @@
   text-decoration: none;
   font-weight: 700;
   color: var(--DarkPurple);
-  font-size: 15px;
+  font-size: 17px;
+
   i {
     color: var(--gradient);
     margin-top: 2px;
@@ -74,6 +96,7 @@
 .services .container .group .srv .links .learn-more {
   color: var(--purple);
   font-weight: 700;
+
   &:hover {
     text-decoration: underline;
   }
