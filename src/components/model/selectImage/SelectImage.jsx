@@ -1,14 +1,22 @@
+/* eslint-disable react/prop-types */
 import { useImageFile } from "../../../context/ImageFileProvider";
 import { MdCloudUpload } from "react-icons/md";
 import "./selectImage.css";
 
-const SelectImage = () => {
-  const { setImageFile } = useImageFile();
+const SelectImage = ({ imageType }) => {
+  const { setHeatmapImage, setScanpathImage, setRecommendationImage } =
+    useImageFile();
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setImageFile(file);
+      if (imageType === "heatmap") {
+        setHeatmapImage(file);
+      } else if (imageType === "scanpath") {
+        setScanpathImage(file);
+      } else if (imageType === "recommendation") {
+        setRecommendationImage(file);
+      }
     }
   };
 

@@ -16,8 +16,17 @@ import { useSearchParams } from "react-router-dom";
 
 const Model = () => {
   const [activeTab, setActiveTab] = useState("heatmap");
-  const { imageFile, setImageFile, setHeatmap3s, setHeatmap7s, setScanpath } =
-    useImageFile();
+  const {
+    heatmapImage,
+    setHeatmapImage,
+    scanpathImage,
+    setScanpathImage,
+    recommendationImage,
+    setRecommendationImage,
+    setHeatmap3s,
+    setHeatmap7s,
+    setScanpath,
+  } = useImageFile();
 
   const [searchParams] = useSearchParams();
   const tab = searchParams.get("tab");
@@ -35,51 +44,79 @@ const Model = () => {
         <meta name="description" content="Model" />
       </Helmet>
       <main>
-        <ul className="tabs">
-          <li
-            onClick={() => setActiveTab("heatmap")}
-            className={`${activeTab === "heatmap" && "active"}`}
-          >
-            Heatmap
-          </li>
-          <li
-            onClick={() => setActiveTab("scanpath")}
-            className={`${activeTab === "scanpath" && "active"}`}
-          >
-            Scanpath
-          </li>
-          <li
-            onClick={() => setActiveTab("recommendations")}
-            className={`${activeTab === "recommendations" && "active"}`}
-          >
-            Recommendations
-          </li>
-        </ul>
-        <div className="container">
-          {!imageFile ? (
-            <SelectImage />
-          ) : (
-            <>
+        <div className="cont">
+          <ul className="tabs">
+            <li
+              onClick={() => setActiveTab("heatmap")}
+              className={`${activeTab === "heatmap" && "active"}`}
+            >
+              Heatmap
+            </li>
+            <li
+              onClick={() => setActiveTab("scanpath")}
+              className={`${activeTab === "scanpath" && "active"}`}
+            >
+              Scanpath
+            </li>
+            <li
+              onClick={() => setActiveTab("recommendations")}
+              className={`${activeTab === "recommendations" && "active"}`}
+            >
+              Recommendations
+            </li>
+          </ul>
+          <div className="container">
+            {activeTab === "heatmap" ? (
               <>
-                {activeTab === "heatmap" ? (
-                  <Heatmap />
-                ) : activeTab === "scanpath" ? (
-                  <Scanpath />
+                {heatmapImage ? (
+                  <>
+                    <Heatmap />
+                    <IoMdCloseCircle
+                      className="close"
+                      onClick={() => {
+                        setHeatmapImage(null);
+                        setHeatmap3s(null);
+                        setHeatmap7s(null);
+                      }}
+                    />
+                  </>
                 ) : (
-                  <Recommendations />
+                  <SelectImage imageType="heatmap" />
                 )}
               </>
-              <IoMdCloseCircle
-                className="close"
-                onClick={() => {
-                  setImageFile(null);
-                  setHeatmap3s(null);
-                  setHeatmap7s(null);
-                  setScanpath(null);
-                }}
-              />
-            </>
-          )}
+            ) : activeTab === "scanpath" ? (
+              <>
+                {scanpathImage ? (
+                  <>
+                    <Scanpath />
+                    <IoMdCloseCircle
+                      className="close"
+                      onClick={() => {
+                        setScanpathImage(null);
+                        setScanpath(null);
+                      }}
+                    />
+                  </>
+                ) : (
+                  <SelectImage imageType="scanpath" />
+                )}
+              </>
+            ) : activeTab === "recommendations" ? (
+              <>
+                {recommendationImage ? (
+                  <>
+                    <Recommendations />
+                    <IoMdCloseCircle
+                      className="close"
+                      onClick={() => setRecommendationImage(null)}
+                    />
+                  </>
+                ) : (
+                  <SelectImage imageType="recommendation" />
+                )}
+              </>
+            ) : null}
+          </div>
         </div>
       </main>
     </>

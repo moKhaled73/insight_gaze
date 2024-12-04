@@ -5,7 +5,7 @@ import GenerateButton from "../button/GenerateButton";
 import TryAgainButton from "../button/TryAgainButton";
 
 const Scanpath = () => {
-  const { imageFile, setScanpath, scanpath } = useImageFile();
+  const { scanpathImage, setScanpath, scanpath } = useImageFile();
 
   const onSuccess = (data) => {
     setScanpath(URL.createObjectURL(data.data));
@@ -13,9 +13,9 @@ const Scanpath = () => {
   const { mutate: generateScanpath, isLoading } = useScanpath(onSuccess);
 
   const generateScanpathHandler = () => {
-    if (imageFile) {
+    if (scanpathImage) {
       const formData = new FormData();
-      formData.append("file", imageFile);
+      formData.append("file", scanpathImage);
       generateScanpath(formData);
     }
   };

@@ -59,7 +59,8 @@ const ImageContainer = ({ imageName, helpName }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [open, setOpen] = useState(false);
-  const { imageFile, heatmap3s, heatmap7s, scanpath } = useImageFile();
+  const { heatmapImage, scanpathImage, heatmap3s, heatmap7s, scanpath } =
+    useImageFile();
 
   const handleDisplayHelp = () => {
     setTitle(HelpDialogContent[helpName].title);
@@ -69,11 +70,11 @@ const ImageContainer = ({ imageName, helpName }) => {
 
   const handleDownload = () => {
     if (helpName === "heatmap-3s") {
-      download(imageFile, heatmap3s, helpName);
+      download(heatmapImage, heatmap3s, helpName);
     } else if (helpName === "heatmap-7s") {
-      download(imageFile, heatmap7s, helpName);
+      download(heatmapImage, heatmap7s, helpName);
     } else if (helpName === "scanpath") {
-      download(imageFile, scanpath, helpName);
+      download(scanpathImage, scanpath, helpName);
     }
   };
 

@@ -16,7 +16,7 @@ const TryAgainButton = () => {
           setScanpath(null);
         }}
       >
-        Try Again
+        Try Another Image
       </button>
     </>
   );

@@ -7,13 +7,31 @@ import HeatmapSlider from "./heatmapSlider/HeatmapSlider";
 import OriginalImage from "../OriginalImage";
 
 const ResultDisplay = ({ helpName }) => {
-  const { heatmap3s, heatmap7s, scanpath } = useImageFile();
+  const {
+    heatmapImage,
+    scanpathImage,
+    recommendationImage,
+    heatmap3s,
+    heatmap7s,
+    scanpath,
+  } = useImageFile();
   const imageContainerRef = useRef(null);
   const resultRef = useRef(null);
 
   return (
     <div ref={imageContainerRef} className="result-display">
-      <OriginalImage imageContainerRef={imageContainerRef} />
+      <OriginalImage
+        imageFile={
+          helpName === "heatmap-3s"
+            ? heatmapImage
+            : helpName === "heatmap-7s"
+            ? heatmapImage
+            : helpName === "scanpath"
+            ? scanpathImage
+            : recommendationImage
+        }
+        imageContainerRef={imageContainerRef}
+      />
       {/heatmap/.test(helpName) ? (
         <>
           {heatmap3s && heatmap7s && (
