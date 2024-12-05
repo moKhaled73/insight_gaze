@@ -1,19 +1,14 @@
-import { useImageFile } from "../../../context/ImageFileProvider";
+/* eslint-disable react/prop-types */
 import "./generateButton.css";
 
-const TryAgainButton = () => {
-  const { setImageFile, setHeatmap3s, setHeatmap7s, setScanpath } =
-    useImageFile();
+const TryAgainButton = ({ clearImage }) => {
   return (
     <>
       <button
         type="button"
         className="button"
         onClick={() => {
-          setImageFile(null);
-          setHeatmap3s(null);
-          setHeatmap7s(null);
-          setScanpath(null);
+          clearImage();
         }}
       >
         Try Another Image

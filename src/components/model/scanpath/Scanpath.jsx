@@ -5,7 +5,8 @@ import GenerateButton from "../button/GenerateButton";
 import TryAgainButton from "../button/TryAgainButton";
 
 const Scanpath = () => {
-  const { scanpathImage, setScanpath, scanpath } = useImageFile();
+  const { scanpathImage, setScanpath, setScanpathImage, scanpath } =
+    useImageFile();
 
   const onSuccess = (data) => {
     setScanpath(URL.createObjectURL(data.data));
@@ -26,7 +27,12 @@ const Scanpath = () => {
         <ImageContainer imageName={"scanpath"} helpName={"scanpath"} />
       </div>
       {scanpath ? (
-        <TryAgainButton />
+        <TryAgainButton
+          clearImage={() => {
+            setScanpath(null);
+            setScanpathImage(null);
+          }}
+        />
       ) : (
         <GenerateButton
           text={"Generate Scanpath"}

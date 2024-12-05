@@ -5,8 +5,13 @@ import GenerateButton from "../button/GenerateButton";
 import ImageContainer from "../imageContainer/ImageContainer";
 import "./heatmap.css";
 const Heatmap = () => {
-  const { heatmapImage, setHeatmap3s, setHeatmap7s, heatmap3s } =
-    useImageFile();
+  const {
+    heatmapImage,
+    setHeatmap3s,
+    setHeatmap7s,
+    setHeatmapImage,
+    heatmap3s,
+  } = useImageFile();
 
   const onSuccessHeatmap3s = (data) => {
     setHeatmap3s(URL.createObjectURL(data.data));
@@ -37,7 +42,13 @@ const Heatmap = () => {
         <ImageContainer imageName={"heatmap 7s"} helpName={"heatmap-7s"} />
       </div>
       {heatmap3s ? (
-        <TryAgainButton />
+        <TryAgainButton
+          clearImage={() => {
+            setHeatmap3s(null);
+            setHeatmap7s(null);
+            setHeatmapImage(null);
+          }}
+        />
       ) : (
         <GenerateButton
           text={"Generate Heatmap"}
