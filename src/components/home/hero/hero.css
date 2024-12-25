@@ -2,11 +2,13 @@ header {
   padding-top: 100px;
   padding-bottom: 80px;
   background: url(../../../src/assets/Desktop.png) no-repeat center/cover;
+ 
 }
 
 header .container {
   width: 90%;
   margin: 0 auto;
+  margin: 100px 90px ;
 }
 
 header .container .row {

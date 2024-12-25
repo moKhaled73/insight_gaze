@@ -1,7 +1,7 @@
 .upload {
-  width: 500px;
-  height: 450px;
-  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+  margin: 70px auto 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,10 +26,58 @@
     align-items: center;
     text-align: center;
   }
+
   p {
     font-size: 25px;
     font-style: italic;
     font-weight: bold;
-    color: #777;
+    color: #a5a4a4;
+  }
+
+  .icon-container {
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+
+    i {
+      color: #c5c5c5;
+      font-size: 50px;
+    }
+
+    .fa-plus {
+      font-size: 22px;
+      color: white;
+      background-color: rgb(79, 2, 152);
+      padding: 10px;
+      border-radius: 50%;
+      position: absolute;
+      top: 17px;
+      left: 30px;
+    }
+  }
+}
+.innovation {
+  border: 3px solid rgb(217, 216, 216);
+  text-align: center;
+  padding: 10px;
+  width: 433px;
+  margin: 28px auto;
+  position: relative;
+  display: inline-block;
+  border-radius: 20px;
+  i{
+    font-size: 30px;
+  background-color: #fafafa;
+  padding: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: -24px;
+  margin-left: -20px;
+  text-align: center;
+  }
+  .idea{
+    margin: 20px;
+  font-weight: 700;
+  color: var(--purple);
   }
 }

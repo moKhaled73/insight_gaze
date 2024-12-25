@@ -92,7 +92,8 @@ footer .continer .service {
 }
 
 .footer {
-  background-color: #4b2480;
+  background-color: #4b2480 ;
+/* background-color: #4b248052 , #24133c; */
   color: white;
   padding: 15px 10px;
   text-align: center;
