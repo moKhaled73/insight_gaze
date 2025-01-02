@@ -4,7 +4,8 @@ footer {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background-color: #4b2480;
+  background:var(--background-footer) ;
+
   color: white;
 }
 
@@ -92,7 +93,7 @@ footer .continer .service {
 }
 
 .footer {
-  background-color: #4b2480 ;
+  background:var(--background-footer) ;
 /* background-color: #4b248052 , #24133c; */
   color: white;
   padding: 15px 10px;

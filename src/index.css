@@ -15,6 +15,9 @@
   --background: linear-gradient(90deg, var(--back), var(--ground));
   --DarkPurple: rgb(88, 22, 195);
   --links-background: rgb(255, 255, 255, 0.45);
+  --back-serv:#f0f0f0;
+  --border-ser:rgba(255, 255, 255, 0);
+  --background-footer:#4b2480;
 }
 
 body[data-theme="dark"] {
@@ -27,6 +30,9 @@ body[data-theme="dark"] {
   --DarkPurple: rgb(170 118 255);
   --links-background: rgb(0, 0, 0, 0.85);
   --words: #c182ff;
+  --back-serv:#030f19;
+  --border-ser:rgb(172, 71, 255);
+  --background-footer:#4b248052;
 }
 
 ::-webkit-scrollbar {
