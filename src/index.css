@@ -16,22 +16,37 @@
   --DarkPurple: rgb(88, 22, 195);
   --links-background: rgb(255, 255, 255, 0.45);
   --back-serv:#f0f0f0;
+  --light-purple: #cec5f78e;
+  --white: #ffffff;
+  --back-serveice: linear-gradient(10deg, var(--light-purple), var(--white), var(--light-purple));
   --border-ser:rgba(255, 255, 255, 0);
   --background-footer:#4b2480;
-}
+  --linear: #cec5f7;
+  --grad: #f4f7fc;
+  --linear-gradient: linear-gradient(180deg, var(--linear), var(--grad));
+} 
 
 body[data-theme="dark"] {
-  --back: #030f19;
-  --ground: #030f19;
-  background-color: #030f19;
+  /* --back: #030f19; */
+  --ground: linear-gradient(180deg, var(--linear), var(--grad));
+  --ground: ;
+  /* background-color: #030f19; */
+
+  --linear: #171717;
+  --grad: #1e1d1f ;
+  --linear-gradient: linear-gradient(100deg, var(--linear), var(--grad));
+  background: linear-gradient(100deg, var(--linear), var(--grad));
+  --light-purple: #1f1f1f;
+  --white: #1e1d1f;
+  --back-serveice: linear-gradient(10deg, var(--light-purple), var(--white), var(--light-purple));
   color: white;
   --color-nav: white;
-  background-color: #030f19;
+  /* background-color: #030f19; */
   --DarkPurple: rgb(170 118 255);
   --links-background: rgb(0, 0, 0, 0.85);
   --words: #c182ff;
   --back-serv:#030f19;
-  --border-ser:rgb(172, 71, 255);
+  --border-ser:rgb(111, 104, 118);
   --background-footer:#4b248052;
 }
 

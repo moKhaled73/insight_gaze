@@ -1,7 +1,8 @@
 header {
   padding-top: 100px;
   padding-bottom: 80px;
-  background: url(../../../src/assets/Desktop.png) no-repeat center/cover;
+  background: var(--linear-gradient);
+  /* background: url(../../../src/assets/Desktop.png) no-repeat center/cover; */
  
 }
 
@@ -30,14 +31,14 @@ header .container .info {
 }
 
 header .container .info h1 {
-  font-size: 26px;
+  font-size: 30px;
   color: var(--DarkPurple);
   width: 70%;
 }
 
 header .container .info p {
   width: 70%;
-  font-size: 20px;
+  font-size: 25px;
   margin-top: 45px;
 
   font-family: "Roboto", sans-serif;
@@ -112,8 +113,8 @@ header .buttons .view-demo {
   border: 3px solid var(--purple);
   border-radius: 6px;
   color: white;
-  font-weight: 600;
-  font-size: 16px;
+  font-weight:500;
+  font-size: 20px;
   border: none;
   cursor: pointer;
   transition: all 0.3s linear;

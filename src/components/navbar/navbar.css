@@ -1,6 +1,7 @@
 nav {
   padding: 5px 0;
   box-shadow: 0px -0.5rem 1rem rgb(123, 120, 120);
+  border-bottom: 1px solid #ffffff30;
 }
 
 nav .container {
