@@ -1,6 +1,7 @@
 import "./demo.css";
 import demo from "../../../assets/Demo.mp4";
-import demoImage from "../../../assets/photo_2024-09-15_02-58-47.jpg";
+import demoImage from "../../../assets/goodheatmap2.jpg";
+
 
 const Demo = () => {
   return (

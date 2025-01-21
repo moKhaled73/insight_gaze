@@ -15,7 +15,7 @@
   --background: linear-gradient(90deg, var(--back), var(--ground));
   --DarkPurple: rgb(88, 22, 195);
   --links-background: rgb(255, 255, 255, 0.45);
-  --back-serv:#f0f0f0;
+  --back-serv:#f1e9e9;
   --light-purple: #cec5f78e;
   --white: #ffffff;
   --back-serveice: linear-gradient(10deg, var(--light-purple), var(--white), var(--light-purple));
@@ -24,30 +24,31 @@
   --linear: #cec5f7;
   --grad: #f4f7fc;
   --linear-gradient: linear-gradient(180deg, var(--linear), var(--grad));
+  --shadow: rgba(0, 0, 0, 0.3);
 } 
 
 body[data-theme="dark"] {
-  /* --back: #030f19; */
-  --ground: linear-gradient(180deg, var(--linear), var(--grad));
-  --ground: ;
-  /* background-color: #030f19; */
-
-  --linear: #171717;
-  --grad: #1e1d1f ;
+  --linear:  #161518;
+  --grad: #060124 ;
   --linear-gradient: linear-gradient(100deg, var(--linear), var(--grad));
   background: linear-gradient(100deg, var(--linear), var(--grad));
-  --light-purple: #1f1f1f;
-  --white: #1e1d1f;
+  --light-purple: #161518;
+  --white: #070226;
   --back-serveice: linear-gradient(10deg, var(--light-purple), var(--white), var(--light-purple));
   color: white;
   --color-nav: white;
-  /* background-color: #030f19; */
-  --DarkPurple: rgb(170 118 255);
   --links-background: rgb(0, 0, 0, 0.85);
-  --words: #c182ff;
   --back-serv:#030f19;
-  --border-ser:rgb(111, 104, 118);
+  --border-ser:rgb(192, 188, 196);
   --background-footer:#4b248052;
+  --shadow: rgba(255, 253, 253, 0.532);
+
+  /* --back: #030f19; */
+  /* --ground: linear-gradient(180deg, var(--linear), var(--grad)); */
+  /* background-color: #030f19; */
+  /* background-color: #030f19; */
+  /* --DarkPurple: rgb(170 118 255); */
+  /* --words: #c182ff; */
 }
 
 ::-webkit-scrollbar {
