@@ -4,7 +4,6 @@ import scanpath from "../../../assets/goodScanpath.jpg";
 import recommendations from "../../../assets/Recommen.jpg";
 import scanpath2 from "../../../assets/scanpath.jpg";
 
-
 import React, { useState, useEffect, useRef } from "react";
 import "./about.css";
 
