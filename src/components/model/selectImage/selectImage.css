@@ -18,6 +18,7 @@
     height: 100%;
     opacity: 0;
     cursor: pointer;
+    z-index: 2;
   }
 
   .upload-text {
@@ -83,4 +84,19 @@
     font-weight: 700;
     color: var(--purple);
   }
+}
+
+.help {
+  position: absolute;
+  top: 63%;
+  right: 0px;
+  z-index: 3;
+  background-color: black;
+  color: white;
+  padding: 0px 5px;
+  border-radius: 50%;
+  font-size: 45px;
+  font-weight: bold;
+  transform: translateY(5px);
+  cursor: pointer;
 }

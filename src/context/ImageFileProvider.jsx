@@ -18,6 +18,9 @@ const ImageFileProvider = ({ children }) => {
   const [scanpath1, setScanpath1] = useState(null);
   const [scanpath2, setScanpath2] = useState(null);
   const [recommendationImage, setRecommendationImage] = useState(null);
+
+  const [openInputFile, setOpenInputFile] = useState(false);
+
   return (
     <imageFileContext.Provider
       value={{
@@ -47,6 +50,8 @@ const ImageFileProvider = ({ children }) => {
         setScanpathImage2,
         recommendationImage,
         setRecommendationImage,
+        openInputFile,
+        setOpenInputFile,
       }}
     >
       {children}

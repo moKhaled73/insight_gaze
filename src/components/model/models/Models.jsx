@@ -4,6 +4,7 @@ import GenerateButton from "../button/GenerateButton";
 
 import "./models.css";
 import ImageContainer from "../imageContainer/ImageContainer";
+import { useImageFile } from "../../../context/ImageFileProvider";
 
 const Models = ({
   originalImage1,
@@ -20,6 +21,8 @@ const Models = ({
   imageName,
   buttonName,
 }) => {
+  const { setOpenInputFile } = useImageFile();
+
   return (
     <>
       <div className="images-container">
@@ -50,6 +53,9 @@ const Models = ({
           clearImage={() => {
             setResultImage1(null);
             setOriginalImage1(null);
+            setOriginalImage2(null);
+            setResultImage2(null);
+            setOpenInputFile(true);
           }}
         />
       ) : (

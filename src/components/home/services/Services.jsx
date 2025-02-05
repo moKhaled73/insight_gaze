@@ -19,7 +19,7 @@ const Services = () => {
               users&apos; attention.
             </p>
             <div className="links">
-              <Link className="try" to="/model?tab=heatmap">
+              <Link className="try" to="/model?tab=heatmap3s">
                 <span>Let&apos;s Try</span>
                 <i className="fa-solid fa-chevron-right"></i>
               </Link>
@@ -35,7 +35,7 @@ const Services = () => {
               like that.
             </p>
             <div className="links">
-              <Link className="try" to="/model?tab=heatmap">
+              <Link className="try" to="/model?tab=heatmap3s">
                 <span>Let&apos;s Try</span>
                 <i className="fa-solid fa-chevron-right"></i>
               </Link>
@@ -50,7 +50,7 @@ const Services = () => {
               when multiple elements need to be thoroughly reviewed.
             </p>
             <div className="links">
-              <Link className="try" to="/model?tab=heatmap">
+              <Link className="try" to="/model?tab=heatmap7s">
                 <span>Let&apos;s Try</span>
                 <i className="fa-solid fa-chevron-right"></i>
               </Link>

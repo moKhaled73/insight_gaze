@@ -13,7 +13,7 @@ import { IoMdCloseCircle } from "react-icons/io";
 import { useSearchParams } from "react-router-dom";
 import { useScanpath } from "../../api/scanpath";
 import { useHeatmap3s, useHeatmap7s } from "../../api/heatmap";
-import Models from "../../components/model/heatmap/Models";
+import Models from "../../components/model/models/Models";
 
 const Model = () => {
   const [activeTab, setActiveTab] = useState("heatmap3s");
