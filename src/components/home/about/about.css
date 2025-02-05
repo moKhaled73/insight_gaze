@@ -12,7 +12,7 @@
   width: 90vw;
   height: auto;
   padding: 20px;
-  margin: 70px 30px;
+  margin: 30px 30px 120px;
 }
 
 .text {
@@ -35,6 +35,8 @@
   line-height: 1.5;
   font-size: 22px;
   width: 100%;
+  text-align: justify;
+
 }
 
 .text hr {

@@ -61,16 +61,8 @@
   font-weight: 300;
   font-style: normal;
   line-height: 1.4;
-  /* background: linear-gradient(to right, #60476c,#60476c );
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: 0% 100%;
-  transition: all 500ms ease-in-out;
-  display: inline;
-  &:hover{
-    background-size: 100% 100%;
-    color: white;
-  } */
+  text-align: justify;
+  height: 40%;
 }
 
 .services .container .group .srv .links {
