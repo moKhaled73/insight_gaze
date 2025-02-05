@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */
+import TryAgainButton from "../button/TryAgainButton";
+import GenerateButton from "../button/GenerateButton";
 
-import "./imageContainer.css";
-import { FaDownload } from "react-icons/fa6";
-import { IoMdHelp } from "react-icons/io";
-import HelpDialog from "../helpDialog/HelpDialog";
+import "./models.css";
 import { useState } from "react";
-import { useImageFile } from "../../../context/ImageFileProvider";
-import ResultDisplay from "./ResultDisplay";
+import { IoMdHelp } from "react-icons/io";
+import { FaDownload } from "react-icons/fa6";
+import HelpDialog from "../helpDialog/HelpDialog";
+import ResultDisplay from "../imageContainer/ResultDisplay";
 
 const HelpDialogContent = {
   "heatmap-3s": {
@@ -55,12 +56,19 @@ const download = (original, result, name) => {
   };
 };
 
-const ImageContainer = ({ imageName, helpName }) => {
+const Models = ({
+  originalImage,
+  resultImage,
+  handler,
+  loading,
+  setOriginalImage,
+  setResultImage,
+  helpName,
+  imageName,
+}) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [open, setOpen] = useState(false);
-  const { heatmapImage, scanpathImage, heatmap3s, heatmap7s, scanpath } =
-    useImageFile();
 
   const handleDisplayHelp = () => {
     setTitle(HelpDialogContent[helpName].title);
@@ -68,45 +76,51 @@ const ImageContainer = ({ imageName, helpName }) => {
     setOpen(true);
   };
 
-  const handleDownload = () => {
-    if (helpName === "heatmap-3s") {
-      download(heatmapImage, heatmap3s, helpName);
-    } else if (helpName === "heatmap-7s") {
-      download(heatmapImage, heatmap7s, helpName);
-    } else if (helpName === "scanpath") {
-      download(scanpathImage, scanpath, helpName);
-    }
-  };
-
   return (
-    <div className={`image-container`}>
-      <div className="info">
-        <span className="image-name">{imageName}</span>
-        <IoMdHelp onClick={handleDisplayHelp} className="icon" size={28} />
-        <FaDownload
-          style={{
-            display: `${
-              (helpName === "heatmap-3s" && heatmap3s) ||
-              (helpName === "heatmap-7s" && heatmap7s) ||
-              (helpName === "scanpath" && scanpath)
-                ? "block"
-                : "none"
-            }`,
-          }}
-          onClick={handleDownload}
-          className="icon"
-          size={28}
-        />
+    <>
+      <div className="images-container">
+        <div className={`image-container`}>
+          <div className="info">
+            <span className="image-name">{imageName}</span>
+            <IoMdHelp onClick={handleDisplayHelp} className="icon" size={28} />
+            <FaDownload
+              style={{
+                display: `${resultImage ? "block" : "none"}`,
+              }}
+              onClick={() => download(originalImage, resultImage, helpName)}
+              className="icon"
+              size={28}
+            />
+          </div>
+          <ResultDisplay
+            helpName={helpName}
+            resultImage={resultImage}
+            originalImage={originalImage}
+          />
+          <HelpDialog
+            title={title}
+            content={content}
+            open={open}
+            setOpen={setOpen}
+          />
+        </div>
       </div>
-      <ResultDisplay helpName={helpName} />
-      <HelpDialog
-        title={title}
-        content={content}
-        open={open}
-        setOpen={setOpen}
-      />
-    </div>
+      {resultImage ? (
+        <TryAgainButton
+          clearImage={() => {
+            setResultImage(null);
+            setOriginalImage(null);
+          }}
+        />
+      ) : (
+        <GenerateButton
+          text={"Generate Heatmap"}
+          loading={loading}
+          onClickHandler={handler}
+        />
+      )}
+    </>
   );
 };
 
-export default ImageContainer;
+export default Models;

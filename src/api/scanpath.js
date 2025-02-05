@@ -12,5 +12,4 @@ const useScanpath = (onSuccess) => {
     onSuccess,
   });
 };
-
 export { useScanpath };

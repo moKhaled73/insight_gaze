@@ -5,7 +5,8 @@ import { createContext, useContext, useState } from "react";
 const imageFileContext = createContext();
 
 const ImageFileProvider = ({ children }) => {
-  const [heatmapImage, setHeatmapImage] = useState(null);
+  const [heatmap3sImage, setHeatmap3sImage] = useState(null);
+  const [heatmap7sImage, setHeatmap7sImage] = useState(null);
   const [scanpathImage, setScanpathImage] = useState(null);
   const [recommendationImage, setRecommendationImage] = useState(null);
   const [heatmap3s, setHeatmap3s] = useState(null);
@@ -14,8 +15,10 @@ const ImageFileProvider = ({ children }) => {
   return (
     <imageFileContext.Provider
       value={{
-        heatmapImage,
-        setHeatmapImage,
+        heatmap3sImage,
+        setHeatmap3sImage,
+        heatmap7sImage,
+        setHeatmap7sImage,
         scanpathImage,
         setScanpathImage,
         recommendationImage,
