@@ -2,24 +2,29 @@
 
 import "./selectImage.css";
 
-const SelectImage = ({ setImage }) => {
+const SelectImage = ({ setImage1, setImage2, multiple }) => {
   const handleImageChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setImage(file);
+    setImage1(event.target.files[0] || null);
+    if (multiple) {
+      setImage2(event.target.files[1] || null);
     }
   };
 
   return (
     <>
       <div className="upload">
-        <input type="file" onChange={handleImageChange} id="image-file" />
+        <input
+          type="file"
+          onChange={handleImageChange}
+          id="image-file"
+          multiple={multiple}
+        />
         <div className="upload-text">
           <div className="icon-container">
             <i className="fa-regular fa-image"></i>
             <i className="fa-solid fa-plus"></i>
           </div>
-          <p>Tap to drag your Design</p>
+          <p>Choose one design or two to compare between them</p>
         </div>
       </div>
       <div className="innovation">
