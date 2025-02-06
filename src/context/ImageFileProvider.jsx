@@ -18,6 +18,10 @@ const ImageFileProvider = ({ children }) => {
   const [scanpath1, setScanpath1] = useState(null);
   const [scanpath2, setScanpath2] = useState(null);
   const [recommendationImage, setRecommendationImage] = useState(null);
+  const [deepAnalysisImage, setDeepAnalysisImage] = useState(null);
+  const [deepAnalysisHeatmap3s, setDeepAnalysisHeatmap3s] = useState(null);
+  const [deepAnalysisHeatmap7s, setDeepAnalysisHeatmap7s] = useState(null);
+  const [deepAnalysisScanpath, setDeepAnalysisScanpath] = useState(null);
 
   const [openInputFile, setOpenInputFile] = useState(false);
 
@@ -52,6 +56,14 @@ const ImageFileProvider = ({ children }) => {
         setRecommendationImage,
         openInputFile,
         setOpenInputFile,
+        deepAnalysisImage,
+        setDeepAnalysisImage,
+        deepAnalysisHeatmap3s,
+        setDeepAnalysisHeatmap3s,
+        deepAnalysisHeatmap7s,
+        setDeepAnalysisHeatmap7s,
+        deepAnalysisScanpath,
+        setDeepAnalysisScanpath,
       }}
     >
       {children}

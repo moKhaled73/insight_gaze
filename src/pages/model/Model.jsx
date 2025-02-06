@@ -15,6 +15,7 @@ import { useScanpath } from "../../api/scanpath";
 import { useHeatmap3s, useHeatmap7s } from "../../api/heatmap";
 import Models from "../../components/model/models/Models";
 import HelpDialog from "../../components/model/helpDialog/HelpDialog";
+import DeepAnalysis from "../../components/model/deepAnalysis/DeepAnalysis";
 
 const features = [
   {
@@ -38,6 +39,12 @@ const features = [
   {
     name: "recommendation",
     title: "Recommendation",
+    content:
+      "This feature is provided for cases where the design is complex, when the user requires a deeper understanding of the design, or when multiple elements need to be thoroughly reviewed.",
+  },
+  {
+    name: "deepAnalysis",
+    title: "Deep Analysis",
     content:
       "This feature is provided for cases where the design is complex, when the user requires a deeper understanding of the design, or when multiple elements need to be thoroughly reviewed.",
   },
@@ -75,6 +82,14 @@ const Model = () => {
     setScanpathImage2,
     recommendationImage,
     setRecommendationImage,
+    deepAnalysisImage,
+    setDeepAnalysisImage,
+    deepAnalysisHeatmap3s,
+    setDeepAnalysisHeatmap3s,
+    deepAnalysisHeatmap7s,
+    setDeepAnalysisHeatmap7s,
+    deepAnalysisScanpath,
+    setDeepAnalysisScanpath,
   } = useImageFile();
 
   // tab
@@ -87,7 +102,7 @@ const Model = () => {
   }, [tab]);
 
   // heatmap 3s api
-  const { mutate: generateHeatmap3s1, isLoading: heatmap3sLoading } =
+  const { mutate: generateHeatmap3s1, isLoading: heatmap3sLoading1 } =
     useHeatmap3s((data) => {
       setHeatmap3s1(URL.createObjectURL(data.data));
     });
@@ -110,7 +125,7 @@ const Model = () => {
   };
 
   // heatmap 7s api
-  const { mutate: generateHeatmap7s1, isLoading: heatmap7sLoading } =
+  const { mutate: generateHeatmap7s1, isLoading: heatmap7sLoading1 } =
     useHeatmap7s((data) => {
       setHeatmap7s1(URL.createObjectURL(data.data));
     });
@@ -133,11 +148,10 @@ const Model = () => {
   };
 
   // scanpath api
-  const { mutate: generateScanpath1, isLoading: scanpathLoading } = useScanpath(
-    (data) => {
+  const { mutate: generateScanpath1, isLoading: scanpathLoading1 } =
+    useScanpath((data) => {
       setScanpath1(URL.createObjectURL(data.data));
-    }
-  );
+    });
 
   const { mutate: generateScanpath2 } = useScanpath((data) => {
     setScanpath2(URL.createObjectURL(data.data));
@@ -153,6 +167,32 @@ const Model = () => {
         formData.append("file", scanpathImage2);
         generateScanpath2(formData);
       }
+    }
+  };
+
+  // deep analysis api
+  const { mutate: generateDeepAnalHeatmap3s, isLoading: heatmap3sLoading } =
+    useHeatmap3s((data) => {
+      setDeepAnalysisHeatmap3s(URL.createObjectURL(data.data));
+    });
+
+  const { mutate: generateDeepAnalHeatmap7s, isLoading: heatmap7sLoading } =
+    useHeatmap7s((data) => {
+      setDeepAnalysisHeatmap7s(URL.createObjectURL(data.data));
+    });
+
+  const { mutate: generateDeepAnalScanpath, isLoading: scanpathLoading } =
+    useScanpath((data) => {
+      setDeepAnalysisScanpath(URL.createObjectURL(data.data));
+    });
+
+  const DeepAnalysisHandler = () => {
+    if (deepAnalysisImage) {
+      const formData = new FormData();
+      formData.append("file", deepAnalysisImage);
+      generateDeepAnalHeatmap3s(formData);
+      generateDeepAnalHeatmap7s(formData);
+      generateDeepAnalScanpath(formData);
     }
   };
 
@@ -197,7 +237,7 @@ const Model = () => {
                       resultImage1={heatmap3s1}
                       resultImage2={heatmap3s2}
                       handler={heatmap3sHandler}
-                      loading={heatmap3sLoading}
+                      loading={heatmap3sLoading1}
                       setOriginalImage1={setHeatmap3sImage1}
                       setOriginalImage2={setHeatmap3sImage2}
                       setResultImage1={setHeatmap3s1}
@@ -234,7 +274,7 @@ const Model = () => {
                       resultImage1={heatmap7s1}
                       resultImage2={heatmap7s2}
                       handler={heatmap7sHandler}
-                      loading={heatmap7sLoading}
+                      loading={heatmap7sLoading1}
                       setOriginalImage1={setHeatmap7sImage1}
                       setOriginalImage2={setHeatmap7sImage2}
                       setResultImage1={setHeatmap7s1}
@@ -271,7 +311,7 @@ const Model = () => {
                       resultImage1={scanpath1}
                       resultImage2={scanpath2}
                       handler={ScanpathHandler}
-                      loading={scanpathLoading}
+                      loading={scanpathLoading1}
                       setOriginalImage1={setScanpathImage1}
                       setOriginalImage2={setScanpathImage2}
                       setResultImage1={setScanpath1}
@@ -311,6 +351,36 @@ const Model = () => {
                 ) : (
                   <SelectImage
                     setImage1={setRecommendationImage}
+                    multiple={false}
+                  />
+                )}
+              </>
+            ) : activeTab === "deepAnalysis" ? (
+              <>
+                {deepAnalysisImage ? (
+                  <>
+                    <DeepAnalysis
+                      originalImage={deepAnalysisImage}
+                      setOriginalImage={setDeepAnalysisImage}
+                      heatmap3s={deepAnalysisHeatmap3s}
+                      setHeatmap3s={setDeepAnalysisHeatmap3s}
+                      heatmap7s={deepAnalysisHeatmap7s}
+                      setHeatmap7s={setDeepAnalysisHeatmap7s}
+                      scanpath={deepAnalysisScanpath}
+                      setScanpath={setDeepAnalysisScanpath}
+                      handler={DeepAnalysisHandler}
+                      loading={
+                        heatmap3sLoading || heatmap7sLoading || scanpathLoading
+                      }
+                    />
+                    <IoMdCloseCircle
+                      className="close"
+                      onClick={() => setDeepAnalysisImage(null)}
+                    />
+                  </>
+                ) : (
+                  <SelectImage
+                    setImage1={setDeepAnalysisImage}
                     multiple={false}
                   />
                 )}
