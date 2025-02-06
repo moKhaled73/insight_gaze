@@ -9,14 +9,45 @@ import Recommendations from "../../components/model/recommendations/Recommendati
 // context
 import { useImageFile } from "../../context/ImageFileProvider";
 
-import { IoMdCloseCircle } from "react-icons/io";
+import { IoMdCloseCircle, IoMdHelp } from "react-icons/io";
 import { useSearchParams } from "react-router-dom";
 import { useScanpath } from "../../api/scanpath";
 import { useHeatmap3s, useHeatmap7s } from "../../api/heatmap";
 import Models from "../../components/model/models/Models";
+import HelpDialog from "../../components/model/helpDialog/HelpDialog";
+
+const features = [
+  {
+    name: "heatmap3s",
+    title: "Heatmap 3s",
+    content:
+      "Heatmap 3sThis feature prioritizes fast response. It is designed to be most effective when speed is essential or the design is less elemental like landing page or banner designs that contain headers or mostly like that.",
+  },
+  {
+    name: "heatmap7s",
+    title: "Heatmap 7s",
+    content:
+      "This feature is provided for cases where the design is complex, when the user requires a deeper understanding of the design, or when multiple elements need to be thoroughly reviewed.",
+  },
+  {
+    name: "scanpath",
+    title: "Scanpath",
+    content:
+      "This feature shows the path that the user's eye will follow or the transitions that the eye will make. Therefore, it shows the interface designer how the user will receive the design.",
+  },
+  {
+    name: "recommendation",
+    title: "Recommendation",
+    content:
+      "This feature is provided for cases where the design is complex, when the user requires a deeper understanding of the design, or when multiple elements need to be thoroughly reviewed.",
+  },
+];
 
 const Model = () => {
   const [activeTab, setActiveTab] = useState("heatmap3s");
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [open, setOpen] = useState(false);
   const {
     heatmap3sImage1,
     heatmap3sImage2,
@@ -46,9 +77,16 @@ const Model = () => {
     setRecommendationImage,
   } = useImageFile();
 
+  // tab
   const [searchParams] = useSearchParams();
   const tab = searchParams.get("tab");
+  useEffect(() => {
+    if (tab) {
+      setActiveTab(tab);
+    }
+  }, [tab]);
 
+  // heatmap 3s api
   const { mutate: generateHeatmap3s1, isLoading: heatmap3sLoading } =
     useHeatmap3s((data) => {
       setHeatmap3s1(URL.createObjectURL(data.data));
@@ -71,6 +109,7 @@ const Model = () => {
     }
   };
 
+  // heatmap 7s api
   const { mutate: generateHeatmap7s1, isLoading: heatmap7sLoading } =
     useHeatmap7s((data) => {
       setHeatmap7s1(URL.createObjectURL(data.data));
@@ -93,6 +132,7 @@ const Model = () => {
     }
   };
 
+  // scanpath api
   const { mutate: generateScanpath1, isLoading: scanpathLoading } = useScanpath(
     (data) => {
       setScanpath1(URL.createObjectURL(data.data));
@@ -116,11 +156,11 @@ const Model = () => {
     }
   };
 
-  useEffect(() => {
-    if (tab) {
-      setActiveTab(tab);
-    }
-  }, [tab]);
+  const helpHandler = (feature) => {
+    setTitle(feature.title);
+    setContent(feature.content);
+    setOpen(true);
+  };
 
   return (
     <>
@@ -131,30 +171,20 @@ const Model = () => {
       <main>
         <div className="cont">
           <ul className="tabs">
-            <li
-              onClick={() => setActiveTab("heatmap3s")}
-              className={`${activeTab === "heatmap3s" && "active"}`}
-            >
-              Heatmap 3s
-            </li>
-            <li
-              onClick={() => setActiveTab("heatmap7s")}
-              className={`${activeTab === "heatmap7s" && "active"}`}
-            >
-              Heatmap 7s
-            </li>
-            <li
-              onClick={() => setActiveTab("scanpath")}
-              className={`${activeTab === "scanpath" && "active"}`}
-            >
-              Scanpath
-            </li>
-            <li
-              onClick={() => setActiveTab("recommendations")}
-              className={`${activeTab === "recommendations" && "active"}`}
-            >
-              Recommendations
-            </li>
+            {features.map((feature) => (
+              <li
+                key={feature.name}
+                onClick={() => setActiveTab(feature.name)}
+                className={`${activeTab === feature.name && "active"}`}
+              >
+                {feature.title}{" "}
+                <IoMdHelp
+                  className="tab-help"
+                  size={20}
+                  onClick={() => helpHandler(feature)}
+                />
+              </li>
+            ))}
           </ul>
           <div className="container">
             {activeTab === "heatmap3s" ? (
@@ -268,7 +298,7 @@ const Model = () => {
                   />
                 )}
               </>
-            ) : activeTab === "recommendations" ? (
+            ) : activeTab === "recommendation" ? (
               <>
                 {recommendationImage ? (
                   <>
@@ -287,6 +317,12 @@ const Model = () => {
               </>
             ) : null}
           </div>
+          <HelpDialog
+            open={open}
+            setOpen={setOpen}
+            title={title}
+            content={content}
+          />
         </div>
       </main>
     </>
