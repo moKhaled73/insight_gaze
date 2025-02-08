@@ -1,6 +1,6 @@
 import "./hero.css";
-import home from "../../../assets/home.png";
-import home_heatmap from "../../../assets/home_heatmap.png";
+import home from "../../../assets/Home.jpg";
+import home_heatmap from "../../../assets/goodheatmap2.jpg";
 import move from "../../../assets/move.png";
 import { useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";

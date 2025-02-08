@@ -83,7 +83,7 @@ const Services = () => {
               patterns, or machine learning insights.
             </p>
             <div className="links">
-              <Link className="try" to="/model?tab=recommendations">
+              <Link className="try" to="/model?tab=recommendation">
                 <span>Let&apos;s Try</span>
                 <i className="fa-solid fa-chevron-right"></i>
               </Link>
@@ -92,6 +92,24 @@ const Services = () => {
               </Link>
             </div>
           </div>
+          <div className="srv">
+            <i
+              className="fa-solid fa-database"
+              style={{ color: "#d0069a" }}
+            ></i>
+            <h2>Deep Analysis</h2>
+            <p>
+              Deep Analysis tool aim to display the results of the three features of the same design at the same time
+              to save the user's time and help him see a comprehensive analysis of his design .
+            </p>
+            <div className="links">
+              <Link className="try" to="/model?tab=deepAnalysis">
+                <span>Let&apos;s Try</span>
+                <i className="fa-solid fa-chevron-right"></i>
+              </Link>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

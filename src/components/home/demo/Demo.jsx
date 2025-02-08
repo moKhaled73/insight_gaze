@@ -11,7 +11,7 @@ const Demo = () => {
           <h1>Demo</h1>
           <p>
             Discover how viewers interact with your videos in real-time. Our
-            AI-powered heatmaps provide deep insights into which scenes capture
+            AI-tools provide deep insights into which scenes capture
             the most attention, helping you optimize your content for maximum
             impact.
           </p>
