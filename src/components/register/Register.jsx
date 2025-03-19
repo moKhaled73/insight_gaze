@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Register.css";
 import logo from "../../assets/Screenshot 2025-03-19 031147.jpg";
-
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -13,18 +13,20 @@ const Register = () => {
         address: "",
     });
 
+    const navigate = useNavigate();
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
         if (formData.password !== formData.password_confirmation) {
             alert("Passwords do not match!");
             return;
         }
-
+    
         try {
             const response = await fetch("https://orientonline.info/api/register", {
                 method: "POST",
@@ -34,11 +36,13 @@ const Register = () => {
                 },
                 body: JSON.stringify(formData),
             });
-
+    
             const data = await response.json();
+    
             if (response.ok) {
+                localStorage.setItem("userName", data.user?.name || "User"); // ✅ تخزين اسم المستخدم
                 alert("Registration Successful! Welcome, " + (data.user?.name || "User"));
-                window.location.href = "login.html";
+                window.location.href = "/"; // ✅ إعادة تحميل الصفحة لتحديث الـ Navbar
             } else {
                 alert("Registration Failed: " + (data.message || "Unknown error"));
             }
@@ -46,6 +50,7 @@ const Register = () => {
             alert("Network Error: Could not connect to the server.");
         }
     };
+    
 
     return (
         <div className="bodyForm">
@@ -78,7 +83,7 @@ const Register = () => {
                     <label>Confirm Password</label>
                     <input type="password" name="password_confirmation" value={formData.password_confirmation} onChange={handleChange} />
                 </div>
-                <button className="register" to={"/homme"} type="submit">Register</button>
+                <button className="register" to={"/home"} type="submit">Register</button>
             </form>
         </div>
     );

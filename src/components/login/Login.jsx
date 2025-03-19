@@ -11,9 +11,7 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        console.log("Sending Data:", { email, password });
-
+    
         try {
             const response = await fetch("https://orientonline.info/api/login", {
                 method: "POST",
@@ -23,23 +21,21 @@ const Login = () => {
                 },
                 body: JSON.stringify({ email, password }),
             });
-
+    
             const data = await response.json();
-            console.log("Raw Response: ", data);
-
+    
             if (response.ok) {
-                console.log("Login Successful:", data);
+                localStorage.setItem("userName", data.user?.name || "User"); // ✅ تخزين اسم المستخدم
                 alert("Login Successful! Welcome, " + (data.user?.name || "User"));
-                navigate("/home");
+                window.location.href = "/"; // ✅ إعادة تحميل الصفحة لتحديث الـ Navbar
             } else {
-                console.error("Login Failed:", data);
                 alert("Login Failed: " + (data.message || "Unknown error"));
             }
         } catch (error) {
-            console.error("Network Error:", error);
             alert("Network Error: Could not connect to the server.");
         }
     };
+    
 
     return (
         <div className="login-container">

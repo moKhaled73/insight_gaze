@@ -1,21 +1,33 @@
 import "./navbar.css";
 import logo from "../../assets/Screenshot 2025-03-19 031147.jpg";
-import { useRef } from "react";
-// import { Link } from "react-router-dom";
+import { useRef, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import ThemeIcon from "../themeIcon/ThemeIcon";
 import NavbarLinks from "../navbarLinks/NavbarLinks";
-import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const links = useRef();
-  const navigate = useNavigate();
+  const [userName, setUserName] = useState(null);
+
+  useEffect(() => {
+    // ✅ استرجاع اسم المستخدم من localStorage عند تحميل الصفحة
+    const storedUserName = localStorage.getItem("userName");
+    if (storedUserName) {
+      setUserName(storedUserName);
+    }
+  }, []);
+
+  // ✅ دالة تسجيل الخروج
+  const handleLogout = () => {
+    localStorage.removeItem("userName"); // حذف اسم المستخدم
+    setUserName(null); // تحديث حالة الـ state
+  };
 
   return (
     <nav>
       <div className="container">
         <Link to="/" className="logo">
           <img src={logo} alt="InsightGaze" />
-          {/* <span className="sight">sightful</span> */}
         </Link>
         <div className="lg-links">
           <NavbarLinks />
@@ -23,17 +35,30 @@ const Navbar = () => {
         <div
           className="menu"
           onClick={() => {
-            console.log("clicked");
             links.current.style.display = "flex";
           }}
         >
           <i className="fa-solid fa-bars"></i>
         </div>
+
+        {/* ✅ عرض اسم المستخدم مع زر تسجيل الخروج عند تسجيل الدخول */}
         <div className="buttons">
           <ThemeIcon />
-          <Link className="login" to={"/login"}>Log in</Link>
-          <Link className="signup" to="/register">Sign up</Link>
+          {userName ? (
+            <>
+              <span className="user-name">Welcome, {userName}</span>
+              <button onClick={handleLogout} className="logout-button">
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link className="login" to="/login">Log in</Link>
+              <Link className="signup" to="/register">Sign up</Link>
+            </>
+          )}
         </div>
+
         <div className="sm-links" ref={links}>
           <div className="controls">
             <i
@@ -43,10 +68,21 @@ const Navbar = () => {
             <ThemeIcon />
           </div>
           <NavbarLinks />
-          <div className="buttons">
-            <Link className="login">log in</Link>
-            <Link className="signup">sign up</Link>
-          </div>
+          
+          {userName && (
+            <li className="user-name">
+              <p>Welcome, </p>
+              <p>{userName}</p>
+              <button onClick={handleLogout} className="logout-button">Logout</button>
+            </li>
+          )}
+
+          {!userName && (
+            <div className="buttons">
+              <Link className="login" to="/login">Log in</Link>
+              <Link className="signup" to="/register">Sign up</Link>
+            </div>
+          )}
         </div>
       </div>
     </nav>
