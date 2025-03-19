@@ -32,7 +32,9 @@ footer .continer .big {
       width: 60px;
     }
     span {
-      font-size: 21px;
+      font-size: 26px;
+      font-weight: 800;
+      color: #f9f9f9b3;
     }
   }
 

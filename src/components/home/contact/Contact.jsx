@@ -1,6 +1,6 @@
 import "./contact.css";
 
-import logo from "../../../assets/logo-removebg-preview.png";
+import logo from "../../../assets/sight-removebg-preview.png";
 
 const Contact = () => {
   return (
@@ -9,8 +9,8 @@ const Contact = () => {
         <div className="continer">
           <div className="big">
             <div className="imlogo">
-              <img src={logo} alt="" />
-              <span>InsightGaze</span>
+              {/* <img src={logo} alt="" /> */}
+              <span>SIGHTFUL</span>
             </div>
             <p className="copy">
               Eye-tracking AI to predict where viewers will focus in your
