@@ -10,14 +10,12 @@ const Navbar = () => {
   const [userName, setUserName] = useState(null);
 
   useEffect(() => {
-    // ✅ استرجاع اسم المستخدم من localStorage عند تحميل الصفحة
     const storedUserName = localStorage.getItem("userName");
     if (storedUserName) {
       setUserName(storedUserName);
     }
   }, []);
 
-  // ✅ دالة تسجيل الخروج
   const handleLogout = () => {
     localStorage.removeItem("userName"); // حذف اسم المستخدم
     setUserName(null); // تحديث حالة الـ state
@@ -41,7 +39,6 @@ const Navbar = () => {
           <i className="fa-solid fa-bars"></i>
         </div>
 
-        {/* ✅ عرض اسم المستخدم مع زر تسجيل الخروج عند تسجيل الدخول */}
         <div className="buttons">
           <ThemeIcon />
           {userName ? (

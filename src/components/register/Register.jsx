@@ -40,9 +40,9 @@ const Register = () => {
             const data = await response.json();
     
             if (response.ok) {
-                localStorage.setItem("userName", data.user?.name || "User"); // ✅ تخزين اسم المستخدم
+                localStorage.setItem("userName", data.user?.name || "User"); 
                 alert("Registration Successful! Welcome, " + (data.user?.name || "User"));
-                window.location.href = "/"; // ✅ إعادة تحميل الصفحة لتحديث الـ Navbar
+                window.location.href = "/"; 
             } else {
                 alert("Registration Failed: " + (data.message || "Unknown error"));
             }
