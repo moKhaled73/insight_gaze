@@ -5,9 +5,6 @@ import { useRef } from "react";
 import ThemeIcon from "../themeIcon/ThemeIcon";
 import NavbarLinks from "../navbarLinks/NavbarLinks";
 import { Link, useNavigate } from "react-router-dom";
-{/* <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300..700&display=swap" rel="stylesheet"> */}
 
 const Navbar = () => {
   const links = useRef();
@@ -34,9 +31,9 @@ const Navbar = () => {
         </div>
         <div className="buttons">
           <ThemeIcon />
-          {/* <button className="login" onClick={() => navigate("/login")}>Log in</button> */}
-          <Link className="login" onClick={() => navigate("/login")}>Log in</Link>
-          <Link className="signup">Sign up</Link>
+          <Link className="login" to={"/login"}>Log in</Link>
+          {/* <Link className="login" onClick={() => navigate("/login")}>Log in</Link> */}
+          <Link className="signup" to="/register">Sign up</Link>
         </div>
         <div className="sm-links" ref={links}>
           <div className="controls">

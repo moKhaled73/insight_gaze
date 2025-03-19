@@ -1,6 +1,6 @@
 import "./contact.css";
 
-import logo from "../../../assets/sight-removebg-preview.png";
+// import logo from "../../assets/Screenshot 2025-03-19 031147.jpg";
 
 const Contact = () => {
   return (

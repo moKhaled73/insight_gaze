@@ -3,9 +3,10 @@ import Home from "./pages/Home";
 import Model from "./pages/model/Model";
 import NotFound from "./pages/NotFound";
 // import Login from "./pages/Login";
-import Register from "./pages/Register";
+// import Register from "./pages/Register";
 import Navbar from "./components/navbar/Navbar";
 import Recommendations from "./pages/recommendations/Recommendations";
+import Register from "./components/register/Register";
 import Login from "./components/login/Login";
 
 const App = () => {

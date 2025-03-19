@@ -4,12 +4,13 @@
     box-sizing: border-box;
 }
 
-.login-container {
+.bodyForm {
     background: url(../../../src/assets/backgroundLogin.png) no-repeat center/cover;
     height: 100vh;
+
 }
 
-#login-form {
+#register-form {
     width: 50%;
     margin: auto;
     padding: 40px;
@@ -34,20 +35,16 @@
 .form-title img {
     width: 200px;
     vertical-align: middle;
-
 }
 
 p {
     text-align: center;
     color: #666;
     margin: 15px 10px;
-    .account{
-        text-decoration: underline;
-    }
+
 }
 
-.email,
-.password {
+.form-group {
     margin-bottom: 15px;
     font-size: 24px;
     color: #333;
@@ -62,14 +59,6 @@ label {
     margin-bottom: 5px;
 }
 
-.check {
-    display: flex;
-    justify-content: end;
-    margin: 15px 0px;
-    text-align: center;
-    font-size: 14px;
-}
-
 input {
     width: 100%;
     padding: 15px;
@@ -77,50 +66,21 @@ input {
     border-radius: 5px;
 }
 
-.login-with {
-    text-align: center;
-    position: relative;
-    margin: 15px 0px;
-    display: flex;
-    align-items: center;
-    padding: 0px 10px;
-    justify-content: center;
-    hr {
-        width: 30%;
-    }
-
-    .login-with {
-        text-align: center;
-        position: relative;
-        margin: 15px 0px;
-        display: flex;
-        align-items: center;
-        padding: 0px 10px;
-    }
-}
-
-.loginBtn,
-.signBtn {
-
-
-    margin: 15px 0px;
+.register {
     width: 100%;
-    height: 55px;
-    border-radius: 8px;
-    border: none;
-    color: white;
+    padding: 16px;
     background: var(--gradient);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     font-size: 20px;
     font-weight: 600;
-    cursor: pointer;
-    font-family: "Lemonada", serif;
-    font-optical-sizing: auto;
-    font-weight: bold;
-    font-style: normal;
+     font-family: "Lemonada", serif;
 }
 
 @media (max-width: 786px) {
-    #login-form {
+    #register-form {
         width: 100%;
         position: absolute;
         top: 22%;
@@ -128,10 +88,11 @@ input {
         transform: translate(0%, 0%);
     }
 
-    .email,
-.password  {
+    .form-group {
         font-size: 12px;
         margin: 4px 0px;
+
+
     }
 
     input {
@@ -141,18 +102,25 @@ input {
         border-radius: 5px;
     }
 
-    .form-title{
+    .form-title {
         font-size: 16px;
         margin: 10px 0px;
+
     }
 
     p {
         font-size: 11px;
     }
 
-    .signBtn,.loginBtn {
+    button {
         width: 100%;
         padding: 10px;
+        background: var(--gradient);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
         font-size: 16px;
+        /* font-weight: 600; */
     }
 }
