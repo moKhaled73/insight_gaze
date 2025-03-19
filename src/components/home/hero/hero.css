@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Kotta+One&family=Lemonada:wght@300..700&family=Mooli&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
+
+
 header {
   padding-top: 100px;
   padding-bottom: 80px;
@@ -44,9 +47,10 @@ header .container .info p {
   margin-top: 45px;
 text-align: justify;
   /* font-family: "Roboto", sans-serif; */
-  font-weight: 300;
+  font-family: "Mooli", sans-serif;
+  font-weight: 600;
   font-style: normal;
-
+letter-spacing: 1.1px;
   line-height: 1.6;
 }
 
@@ -120,6 +124,9 @@ header .buttons .view-demo {
   border: none;
   cursor: pointer;
   transition: all 0.3s linear;
+  font-family: "Kotta One", serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 header .buttons .view-demo {

@@ -1,5 +1,5 @@
 import "./navbar.css";
-import logo from "../../assets/sight-removebg-preview.png";
+import logo from "../../assets/Screenshot 2025-03-19 031147.jpg";
 import { useRef } from "react";
 // import { Link } from "react-router-dom";
 import ThemeIcon from "../themeIcon/ThemeIcon";

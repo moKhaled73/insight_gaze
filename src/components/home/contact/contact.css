@@ -34,13 +34,15 @@ footer .continer .big {
     span {
       font-size: 26px;
       font-weight: 800;
-      color: #f9f9f9b3;
+      color: #f9f9f9ed;
     }
   }
 
   .copy {
     width: 80%;
     min-width: 304px;
+    color: rgb(180, 177, 177);
+    text-align: start;
     p {
       line-height: 1.5;
     }
