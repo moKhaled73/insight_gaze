@@ -25,6 +25,7 @@
   --grad: #f4f7fc;
   --linear-gradient: linear-gradient(180deg, var(--linear), var(--grad));
   --shadow: rgba(0, 0, 0, 0.3);
+  --color:#333;
 }
 
 body[data-theme="dark"] {
@@ -42,6 +43,8 @@ body[data-theme="dark"] {
   --border-ser: rgb(192, 188, 196);
   --background-footer: #4b248052;
   --shadow: rgba(255, 253, 253, 0.532);
+
+  --color:#eeeeee;
 
   /* --back: #030f19; */
   /* --ground: linear-gradient(180deg, var(--linear), var(--grad)); */

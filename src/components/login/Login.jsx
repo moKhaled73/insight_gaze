@@ -87,7 +87,7 @@ const Login = () => {
                 </div>
 
                 <button className="signBtn">
-                    Sign up with Google
+                    Login up with Google
                 </button>
             </form>
         </div>

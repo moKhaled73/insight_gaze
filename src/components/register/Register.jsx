@@ -84,6 +84,15 @@ const Register = () => {
                     <input type="password" name="password_confirmation" value={formData.password_confirmation} onChange={handleChange} />
                 </div>
                 <button className="register" to={"/home"} type="submit">Register</button>
+                <div className="login-with">
+                    <hr className="one" />
+                    <p className="login-with">Or Login With</p>
+                    <hr className="two" />
+                </div>
+
+                <button className="signBtn">
+                    Sign up with Google
+                </button>
             </form>
         </div>
     );
