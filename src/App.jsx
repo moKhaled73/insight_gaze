@@ -8,6 +8,8 @@ import Navbar from "./components/navbar/Navbar";
 import Recommendations from "./pages/recommendations/Recommendations";
 import Register from "./components/register/Register";
 import Login from "./components/login/Login";
+import HOme from "./pages/Home";
+
 
 const App = () => {
   return (
@@ -15,6 +17,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/homme" element={<Home />} />
         <Route path="/model" element={<Model />} />
         <Route path="/recommendations" element={<Recommendations />} />
         <Route path="/login" element={<Login />} />

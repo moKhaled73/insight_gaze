@@ -78,7 +78,7 @@ const Register = () => {
                     <label>Confirm Password</label>
                     <input type="password" name="password_confirmation" value={formData.password_confirmation} onChange={handleChange} />
                 </div>
-                <button className="register" type="submit">Register</button>
+                <button className="register" to={"/homme"} type="submit">Register</button>
             </form>
         </div>
     );
