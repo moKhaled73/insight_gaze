@@ -24,7 +24,7 @@
 
   span {
     text-transform: capitalize;
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 600;
     color: var(--color-nav);
   }

@@ -32,7 +32,6 @@ const Navbar = () => {
         <div className="buttons">
           <ThemeIcon />
           <Link className="login" to={"/login"}>Log in</Link>
-          {/* <Link className="login" onClick={() => navigate("/login")}>Log in</Link> */}
           <Link className="signup" to="/register">Sign up</Link>
         </div>
         <div className="sm-links" ref={links}>
