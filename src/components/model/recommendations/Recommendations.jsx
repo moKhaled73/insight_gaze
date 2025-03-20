@@ -9,28 +9,6 @@ import {
 } from "../../../api/recommendations";
 import Markdown from "react-markdown";
 
-// const TypingEffect = ({ fullText, speed = 2 }) => {
-//   const [displayedText, setDisplayedText] = useState("");
-
-//   useEffect(() => {
-//     setDisplayedText("");
-//     let index = 0;
-
-//     const intervalId = setInterval(() => {
-//       setDisplayedText((prev) => prev + fullText[index]);
-//       index += 1;
-
-//       if (index === fullText.length - 1) {
-//         clearInterval(intervalId);
-//       }
-//     }, speed); // سرعة الكتابة
-
-//     return () => clearInterval(intervalId); // تنظيف التأثير عند تفريغ المكون
-//   }, [fullText, speed]);
-
-//   return <ReactMarkdown>{displayedText}</ReactMarkdown>;
-// };
-
 const Recommendations = () => {
   const { recommendationImage } = useImageFile();
   const imageContainerRef = useRef(null);

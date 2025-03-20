@@ -92,10 +92,6 @@ main .container .images-container {
   border-radius: 10px;
   position: relative;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-@media (max-width: 1180px) {
-  main .container .images-container {
-    flex-direction: column;
-  }
-}
