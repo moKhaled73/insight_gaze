@@ -1,5 +1,5 @@
 import "./demo.css";
-import demo from "../../../assets/Demo.mp4";
+import demo from "../../../assets/demo1.mp4";
 import demoImage from "../../../assets/goodheatmap2.jpg";
 
 

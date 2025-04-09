@@ -34,7 +34,7 @@ const App = () => {
   }, []);
 
   return (
-    <>
+    <section id="about">
       <h1 className="headerAbout">About</h1>
       <div className="big-container">
         <div
@@ -79,7 +79,7 @@ const App = () => {
           </p>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

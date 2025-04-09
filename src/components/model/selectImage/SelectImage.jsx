@@ -42,7 +42,7 @@ const SelectImage = ({ setImage1, setImage2, multiple }) => {
           <p>Choose one design or two to compare between them </p>
         </div>
       </div>
-      <IoMdHelp className="help" onClick={() => setOpen(true)} />
+      {multiple && <IoMdHelp className="help" onClick={() => setOpen(true)} />}
 
       <div className="innovation">
         <i className="fa-solid fa-lightbulb"></i>
@@ -51,6 +51,7 @@ const SelectImage = ({ setImage1, setImage2, multiple }) => {
           smart recommendations guide your creativity.
         </p>
       </div>
+
       <HelpDialog
         title={"Try our comparison tool!"}
         content={
