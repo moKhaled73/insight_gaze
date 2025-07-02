@@ -1,15 +1,11 @@
 import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/Home";
 import Model from "./pages/model/Model";
-import NotFound from "./pages/NotFound";
-// import Login from "./pages/Login";
-// import Register from "./pages/Register";
-import Navbar from "./components/navbar/Navbar";
 import Recommendations from "./pages/recommendations/Recommendations";
-import Register from "./components/register/Register";
-import Login from "./components/login/Login";
-import HOme from "./pages/Home";
-
+import Login from "./pages/login/Login";
+import Register from "./pages/register/Register";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -17,7 +13,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/home" element={<HOme />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/model" element={<Model />} />
         <Route path="/recommendations" element={<Recommendations />} />
         <Route path="/login" element={<Login />} />

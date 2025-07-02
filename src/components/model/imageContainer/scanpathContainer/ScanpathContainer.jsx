@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react";
-import { FaDownload } from "react-icons/fa6";
 import OriginalImage from "../../OriginalImage";
-import "./scanpathContainer.css";
+import { FaDownload } from "react-icons/fa6";
+import { useEffect, useRef } from "react";
+import "../imageContainer.css";
 
 const download = (original, scanpath, name) => {
   const canvas = document.createElement("canvas");
@@ -115,8 +115,9 @@ const ScanpathContainer = ({
       img.onerror = () => console.error("Image failed to load:", originalImage);
     }
   }, [scanpath]);
+
   return (
-    <div className={`image-container`}>
+    <div className="image-container">
       <div className="info">
         <span className="image-name">{imageName}</span>
         {scanpath && (

@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
-import { useImageFile } from "../../../context/ImageFileProvider";
+import { useImageFile } from "../../../../context/ImageFileProvider";
 import { IoMdCloseCircle } from "react-icons/io";
-import GenerateButton from "../button/GenerateButton";
-import OriginalImage from "../OriginalImage";
+import GenerateButton from "../../button/GenerateButton";
+import OriginalImage from "../../OriginalImage";
 import Markdown from "react-markdown";
-import SelectImage from "../selectImage/SelectImage";
+import SelectImage from "../../selectImage/SelectImage";
 import {
   useOurRecommendations,
   useRecommendations,
-} from "../../../api/recommendations";
+} from "../../../../api/recommendations";
 import "./Recommendations.css";
 
 const Recommendations = () => {

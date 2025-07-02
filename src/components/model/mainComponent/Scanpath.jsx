@@ -1,27 +1,26 @@
-import React from "react";
-import { useImageFile } from "../../context/ImageFileProvider";
-import { useScanpath } from "../../api/scanpath";
+import ScanpathContainer from "../imageContainer/scanpathContainer/ScanpathContainer";
+import TryAgainButton from "../button/TryAgainButton";
+import GenerateButton from "../button/GenerateButton";
+import SelectImage from "../selectImage/SelectImage";
+import { useImageFile } from "../../../context/ImageFileProvider";
+import { useScanpath } from "../../../api/scanpath";
 import { IoMdCloseCircle } from "react-icons/io";
-import SelectImage from "./selectImage/SelectImage";
-import TryAgainButton from "./button/TryAgainButton";
-import GenerateButton from "./button/GenerateButton";
-import ScanpathContainer from "./imageContainer/scanpathContainer/ScanpathContainer";
 
 const Scanpath = () => {
   const {
     scanpathImage1,
-    scanpathImage2,
-    scanpath1,
-    scanpath2,
-    setScanpath1,
-    setScanpath2,
     setScanpathImage1,
+    scanpath1,
+    setScanpath1,
+    scanpathImage2,
     setScanpathImage2,
+    scanpath2,
+    setScanpath2,
+    setOpenInputFile,
   } = useImageFile();
 
   const { mutate: generateScanpath1, isLoading: scanpathLoading1 } =
     useScanpath((data) => {
-      // console.log(data.data.scanpath);
       setScanpath1(data.data.scanpath);
     });
 

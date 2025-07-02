@@ -5,11 +5,12 @@ import "./model.css";
 import { useSearchParams } from "react-router-dom";
 
 import HelpDialog from "../../components/model/helpDialog/HelpDialog";
-import Heatmap3s from "../../components/model/Heatmap3s";
-import Heatmap7s from "../../components/model/Heatmap7s";
-import Scanpath from "../../components/model/Scanpath";
-import Recommendations from "../../components/model/recommendations/Recommendations";
-import DeepAnalysis from "../../components/model/DeepAnalysis";
+import Heatmap3s from "../../components/model/mainComponent/Heatmap3s";
+import Heatmap7s from "../../components/model/mainComponent/Heatmap7s";
+import Scanpath from "../../components/model/mainComponent/Scanpath";
+import Recommendations from "../../components/model/mainComponent/recommendations/Recommendations";
+import DeepAnalysis from "../../components/model/mainComponent/DeepAnalysis";
+import Scores from "../../components/model/mainComponent/Scores";
 import { IoMdHelp } from "react-icons/io";
 
 const features = [
@@ -28,6 +29,12 @@ const features = [
   {
     name: "scanpath",
     title: "Scanpath",
+    content:
+      "This feature shows the path that the user's eye will follow or the transitions that the eye will make. Therefore, it shows the interface designer how the user will receive the design.",
+  },
+  {
+    name: "scores",
+    title: "Scores",
     content:
       "This feature shows the path that the user's eye will follow or the transitions that the eye will make. Therefore, it shows the interface designer how the user will receive the design.",
   },
@@ -97,6 +104,8 @@ const Model = () => {
               <Heatmap7s />
             ) : activeTab === "scanpath" ? (
               <Scanpath />
+            ) : activeTab === "scores" ? (
+              <Scores />
             ) : activeTab === "recommendation" ? (
               <Recommendations />
             ) : activeTab === "deepAnalysis" ? (

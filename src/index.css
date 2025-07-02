@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Kotta+One&family=Lemonada:wght@300..700&family=Mooli&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&family=Signika:wght@300..700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Kotta+One&family=Lemonada:wght@300..700&family=Mooli&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&family=Signika:wght@300..700&display=swap");
 
 * {
   margin: 0;
@@ -21,40 +20,19 @@
   --back-serv: #f1e9e9;
   --light-purple: #cec5f78e;
   --white: #ffffff;
-  --back-serveice: linear-gradient(10deg, var(--light-purple), var(--white), var(--light-purple));
+  --back-serveice: linear-gradient(
+    10deg,
+    var(--light-purple),
+    var(--white),
+    var(--light-purple)
+  );
   --border-ser: rgba(255, 255, 255, 0);
   --background-footer: #4b2480;
   --linear: #cec5f7;
   --grad: #f4f7fc;
   --linear-gradient: linear-gradient(180deg, var(--linear), var(--grad));
   --shadow: rgba(0, 0, 0, 0.3);
-  --color:#333;
-}
-
-body[data-theme="dark"] {
-  --linear: #161518;
-  --grad: #060124;
-  --linear-gradient: linear-gradient(100deg, var(--linear), var(--grad));
-  background: linear-gradient(100deg, var(--linear), var(--grad));
-  --light-purple: #161518;
-  --white: #070226;
-  --back-serveice: linear-gradient(10deg, var(--light-purple), var(--white), var(--light-purple));
-  color: white;
-  --color-nav: white;
-  --links-background: rgb(0, 0, 0, 0.85);
-  --back-serv: #030f19;
-  --border-ser: rgb(192, 188, 196);
-  --background-footer: #4b248052;
-  --shadow: rgba(255, 253, 253, 0.532);
-
-  --color:#eeeeee;
-
-  /* --back: #030f19; */
-  /* --ground: linear-gradient(180deg, var(--linear), var(--grad)); */
-  /* background-color: #030f19; */
-  /* background-color: #030f19; */
-  /* --DarkPurple: rgb(170 118 255); */
-  /* --words: #c182ff; */
+  --color: #333;
 }
 
 ::-webkit-scrollbar {
@@ -77,6 +55,33 @@ body[data-theme="dark"] {
   background-color: transparent;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body[data-theme="dark"] {
+  --linear: #161518;
+  --grad: #060124;
+  --linear-gradient: linear-gradient(100deg, var(--linear), var(--grad));
+  background: linear-gradient(100deg, var(--linear), var(--grad));
+  --light-purple: #161518;
+  --white: #070226;
+  --back-serveice: linear-gradient(
+    10deg,
+    var(--light-purple),
+    var(--white),
+    var(--light-purple)
+  );
+  color: white;
+  --color-nav: white;
+  --links-background: rgb(0, 0, 0, 0.85);
+  --back-serv: #030f19;
+  --border-ser: rgb(192, 188, 196);
+  --background-footer: #4b248052;
+  --shadow: rgba(255, 253, 253, 0.532);
+  --color: #eeeeee;
+}
+
 ul {
   list-style: none;
 }
@@ -85,35 +90,11 @@ a {
   text-decoration: none;
 }
 
-/* @import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300..700&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300..700&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Mooli&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap'); */
-
-
-/* @import url('https://fonts.googleapis.com/css2?family=Kotta+One&family=Lemonada:wght@300..700&family=Mooli&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap'); */
 body {
-  /* font-family: 'Lemonada', cursive;
-  font-style: normal; */
-  
   font-family: "Kotta One", serif;
   font-weight: 500;
   font-style: normal;
-
-  /* font-family: "Sansita", sans-serif;
-  font-weight: 400;
-  font-style: italic; */
-
- 
-}
-
-body {
   background-color: white;
   color: black;
-  /* font-family:  Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;  */
   font-style: normal;
-}
-
-html {
-  scroll-behavior: smooth;
 }

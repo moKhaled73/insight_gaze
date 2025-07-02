@@ -1,8 +1,9 @@
-import React, { useRef } from "react";
 import OriginalImage from "../../OriginalImage";
-import { FaDownload } from "react-icons/fa6";
-import "./heatmapContainer.css";
 import HeatmapSlider from "../heatmapSlider/HeatmapSlider";
+import { FaDownload } from "react-icons/fa6";
+import { useRef } from "react";
+import "../imageContainer.css";
+import "./heatmapContainer.css";
 
 const download = (original, result, name) => {
   const canvas = document.createElement("canvas");
@@ -43,7 +44,7 @@ const HeatmapContainer = ({
   const resultRef = useRef(null);
 
   return (
-    <div className={`image-container`}>
+    <div className="image-container">
       <div className="info">
         <span className="image-name">{imageName}</span>
         {resultImage && (

@@ -1,22 +1,22 @@
-import React from "react";
-import { useImageFile } from "../../context/ImageFileProvider";
-import { useHeatmap7s } from "../../api/heatmap";
+import HeatmapContainer from "../imageContainer/heatmapContainer/HeatmapContainer";
+import TryAgainButton from "../button/TryAgainButton";
+import GenerateButton from "../button/GenerateButton";
+import SelectImage from "../selectImage/SelectImage";
+import { useImageFile } from "../../../context/ImageFileProvider";
+import { useHeatmap7s } from "../../../api/heatmap";
 import { IoMdCloseCircle } from "react-icons/io";
-import SelectImage from "./selectImage/SelectImage";
-import TryAgainButton from "./button/TryAgainButton";
-import GenerateButton from "./button/GenerateButton";
-import HeatmapContainer from "./imageContainer/heatmapContainer/HeatmapContainer";
 
 const Heatmap7s = () => {
   const {
     heatmap7sImage1,
-    heatmap7sImage2,
     setHeatmap7sImage1,
-    setHeatmap7sImage2,
-    setHeatmap7s1,
-    setHeatmap7s2,
     heatmap7s1,
+    setHeatmap7s1,
+    heatmap7sImage2,
+    setHeatmap7sImage2,
     heatmap7s2,
+    setHeatmap7s2,
+    setOpenInputFile,
   } = useImageFile();
 
   const { mutate: generateHeatmap7s1, isLoading: heatmap7sLoading1 } =

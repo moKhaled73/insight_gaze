@@ -1,0 +1,32 @@
+.image-container .inner-container {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.image-container .inner-container .results {
+  width: 450px;
+}
+
+.image-container .inner-container .results .score {
+  margin: 20px;
+}
+
+.image-container .inner-container .results .score .score-name {
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+
+.image-container .inner-container .results .score .outer-bar {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+.image-container .inner-container .results .score .outer-bar .inner-bar {
+  background-color: var(--pink);
+  text-align: center;
+  color: white;
+  padding: 3px;
+  font-size: 14px;
+  border-radius: 5px;
+}

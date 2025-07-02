@@ -1,22 +1,22 @@
-import React from "react";
+import HeatmapContainer from "../imageContainer/heatmapContainer/HeatmapContainer";
+import TryAgainButton from "../button/TryAgainButton";
+import GenerateButton from "../button/GenerateButton";
+import SelectImage from "../selectImage/SelectImage";
+import { useImageFile } from "../../../context/ImageFileProvider";
+import { useHeatmap3s } from "../../../api/heatmap";
 import { IoMdCloseCircle } from "react-icons/io";
-import { useImageFile } from "../../context/ImageFileProvider";
-import { useHeatmap3s } from "../../api/heatmap";
-import SelectImage from "./selectImage/SelectImage";
-import GenerateButton from "./button/GenerateButton";
-import TryAgainButton from "./button/TryAgainButton";
-import HeatmapContainer from "./imageContainer/heatmapContainer/HeatmapContainer";
 
 const Heatmap3s = () => {
   const {
     heatmap3sImage1,
     setHeatmap3sImage1,
-    heatmap3sImage2,
-    setHeatmap3sImage2,
     heatmap3s1,
     setHeatmap3s1,
+    heatmap3sImage2,
+    setHeatmap3sImage2,
     heatmap3s2,
     setHeatmap3s2,
+    setOpenInputFile,
   } = useImageFile();
 
   const { mutate: generateHeatmap3s1, isLoading: heatmap3sLoading1 } =
@@ -90,8 +90,8 @@ const Heatmap3s = () => {
             className="close"
             onClick={() => {
               setHeatmap3sImage1(null);
-              setHeatmap3sImage2(null);
               setHeatmap3s1(null);
+              setHeatmap3sImage2(null);
               setHeatmap3s2(null);
             }}
           />

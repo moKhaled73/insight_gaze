@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
+import HeatmapContainer from "../imageContainer/heatmapContainer/HeatmapContainer";
+import ScanpathContainer from "../imageContainer/scanpathContainer/ScanpathContainer";
+import TryAgainButton from "../button/TryAgainButton";
+import GenerateButton from "../button/GenerateButton";
+import SelectImage from "../selectImage/SelectImage";
+import { useHeatmap3s, useHeatmap7s } from "../../../api/heatmap";
+import { useScanpath } from "../../../api/scanpath";
+import { useImageFile } from "../../../context/ImageFileProvider";
 import { IoMdCloseCircle } from "react-icons/io";
-import { useImageFile } from "../../context/ImageFileProvider";
-import GenerateButton from "./button/GenerateButton";
-import TryAgainButton from "./button/TryAgainButton";
-import SelectImage from "./selectImage/SelectImage";
-import { useHeatmap3s, useHeatmap7s } from "../../api/heatmap";
-import { useScanpath } from "../../api/scanpath";
-import HeatmapContainer from "./imageContainer/heatmapContainer/HeatmapContainer";
-import ScanpathContainer from "./imageContainer/scanpathContainer/ScanpathContainer";
 
 const DeepAnalysis = ({}) => {
   const {
