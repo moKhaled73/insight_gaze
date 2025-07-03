@@ -17,7 +17,7 @@
 }
 
 .recommendations-container .image {
-  width: 512px;
+  width: 450px;
   height: 512px;
   display: flex;
   justify-content: center;
@@ -36,10 +36,10 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   margin-top: 20px;
-  width: 100%;
   max-height: 500px;
+  width: 100%;
 }
 
 .recommendations-container .recommendations select {
@@ -92,29 +92,87 @@
 
 .recommendations-container .recommendations .recommendation-response {
   overflow: auto;
-  padding: 10px;
-}
-
-.recommendations-container .recommendations .recommendation-response p {
-  margin: 16px 0;
-  font-family: sans-serif;
-    text-align: justify;
-    color: #151414;
-    line-height: 1.7;
-    border-bottom: 1px solid lightgrey;
+  border: 2px solid #bebcfe80;
+  border-radius: 5px;
+  background-color: #f9f9f9;
 }
 
 .recommendations-container
   .recommendations
   .recommendation-response
-  p.selected {
-    background: #f0f0f0;
-    border-left: 5px solid var(--purple);
-    padding: 10px;
-    font-family: sans-serif;
-    font-size: 18px;
-    text-align: justify;
-    color: #444242;
+  .recommendation-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px;
+  background-color: #e6e6e6;
+}
+
+.recommendations-container
+  .recommendations
+  .recommendation-response
+  .recommendation-header
+  h4 {
+  margin: 0;
+  color: #333;
+}
+
+.recommendations-container
+  .recommendations
+  .recommendation-response
+  .recommendation-header
+  button {
+  border: none;
+  background-color: white;
+  color: #333;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 2px 6px;
+}
+
+.recommendations-container
+  .recommendations
+  .recommendation-response
+  .recommendation-content {
+  padding: 7px;
+}
+
+.recommendations-container
+  .recommendations
+  .recommendation-response
+  .recommendation-content
+  .placeholder {
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+  color: #917f7f;
+}
+
+.recommendations-container
+  .recommendations
+  .recommendation-response
+  .recommendation-content
+  .recommendation-text {
+  margin: 16px 0;
+  font-family: sans-serif;
+  text-align: justify;
+  color: #151414;
+  line-height: 1.7;
+  border-bottom: 1px solid lightgrey;
+}
+
+.recommendations-container
+  .recommendations
+  .recommendation-response
+  .recommendation-content
+  .recommendation-text.selected {
+  background: #f0f0f0;
+  border-left: 5px solid var(--purple);
+  padding: 10px;
+  font-family: sans-serif;
+  font-size: 18px;
+  text-align: justify;
+  color: #444242;
 }
 
 .recommendations-container .recommendations .recommendation-response ul {
