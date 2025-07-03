@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useImageFile } from "../../../../context/ImageFileProvider";
 import { IoMdCloseCircle } from "react-icons/io";
 import GenerateButton from "../../button/GenerateButton";
-import OriginalImage from "../../OriginalImage";
+// import OriginalImage from "../../OriginalImage";
 import Markdown from "react-markdown";
 import SelectImage from "../../selectImage/SelectImage";
 import {

@@ -35,3 +35,10 @@
     rotate: 1turn;
   }
 }
+
+@media (max-width: 515px) {
+  .button {
+    width: 100%;
+    font-size: 18px;
+  }
+}

@@ -1,4 +1,4 @@
-import OriginalImage from "../../OriginalImage";
+import OriginalImage from "../OriginalImage";
 import { FaDownload } from "react-icons/fa6";
 import { useEffect, useRef } from "react";
 import "../imageContainer.css";

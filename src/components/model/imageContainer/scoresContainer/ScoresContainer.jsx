@@ -1,4 +1,4 @@
-import OriginalImage from "../../OriginalImage";
+import OriginalImage from "../OriginalImage";
 import { useRef } from "react";
 import "../imageContainer.css";
 import "./scoresContainer.css";

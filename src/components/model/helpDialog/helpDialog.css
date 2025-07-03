@@ -17,6 +17,7 @@
   padding: 20px;
   position: relative;
   border-radius: 6px;
+  margin: 20px;
 }
 
 .dialog .content h4 {

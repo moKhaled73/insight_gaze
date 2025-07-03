@@ -58,6 +58,7 @@
     }
   }
 }
+
 .innovation {
   border: 3px solid rgb(217, 216, 216);
   text-align: center;
@@ -83,6 +84,17 @@
     margin: 20px;
     font-weight: 700;
     color: var(--purple);
+  }
+}
+
+@media (max-width: 460px) {
+  .upload {
+    width: 100%;
+    height: 300px;
+  }
+
+  .innovation {
+    width: 100%;
   }
 }
 
